@@ -8,6 +8,9 @@
   
   [резюме на русском](Egor-kalash.github.io/homeworks/html 5/резюме.html " 1-й урок ")
   
+  [список покупок](Egor-kalash.github.io/список покупок.html" 3-й урок ")
   
+ 
+
  
    

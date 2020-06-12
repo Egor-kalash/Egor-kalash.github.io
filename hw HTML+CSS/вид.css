@@ -1,0 +1,26 @@
+h1{
+background-color: #A62A2A;
+color: white;
+font-size: 20px;
+}
+h2{
+    background-color: black;
+        color: white;
+}
+.paragraph{
+    color: black;
+    font-weight: bold;
+}
+.bold{
+color: blue ;
+}
+.italic{
+    font-style: italic;
+    color: blue;
+    }
+.dot{
+    border:4px dotted black;
+}
+.size{
+    font-size: 18;
+}

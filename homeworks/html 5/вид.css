@@ -1,0 +1,21 @@
+h1{
+background-color: brown;
+color: white;
+}
+h2{
+    background-color: black;
+        color: white;
+}
+.paragraph{
+    color: black;
+}
+.bold{
+color: blue ;
+}
+.italic{
+    font-style: italic;
+    color: blue;
+    }
+.dot{
+    border:3px dotted black;
+}

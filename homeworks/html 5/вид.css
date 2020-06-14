@@ -1,21 +1,34 @@
-h1{
-background-color: brown;
-color: white;
+.bk {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    text-align: center
 }
-h2{
-    background-color: black;
-        color: white;
+
+/*  
+.bk {
+    background: url(images/bg.jpg) no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: scroll
+} 
+*/
+
+div {
+    text-align: center;
 }
-.paragraph{
-    color: black;
+
+.logo {
+    text-align: center;
+    top: 37%;
 }
-.bold{
-color: blue ;
-}
-.italic{
-    font-style: italic;
-    color: blue;
-    }
-.dot{
-    border:3px dotted black;
+
+.foto {
+    text-align: center;
+    top: 45%;
 }

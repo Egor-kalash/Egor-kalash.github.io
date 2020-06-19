@@ -1,0 +1,131 @@
+header{
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+.p1,
+.p2
+ h1{
+    letter-spacing: 4.8px;
+}
+.p1{
+font-size: 12px;
+color: #9a9fa8;
+
+}
+h1{
+    font-size: 48px;
+    color: #0ec8cb;
+}
+.p2{
+    width: 513px;
+    font-size: 18px;
+    color: #999999;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.services{
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 420px;
+    width: 960px;
+    display: flex;
+}
+.service{
+    width: 237px;
+    height: 420px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+    transition: all 180ms ease-in-out;
+
+}
+.service:hover{
+    background-color: #0ec8cb;
+    border: 2px solid #0ec8cb;
+    color: white;
+}
+
+.ia{
+    position: relative;
+    background-position: center;
+    margin-left: 36.5%;
+    margin-right: 36.5%;
+    margin-top:23%;
+    transition: all 180ms ease-in-out;
+    height: 66px;
+    margin-bottom: 47px;
+}
+
+.icon{
+    background: url(./icon1B.png) no-repeat;
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+.icon:hover{
+    background: url(./icon1W.png) no-repeat;
+    background-position: center;
+}
+.icon1{
+    background: url(./icon2B.png)no-repeat;
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+
+.icon1:hover{
+    background: url(./icon2W.png)no-repeat;
+    background-position: center;
+}
+
+.icon2{
+    background: url(./icon3B.png)no-repeat;
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto ;
+}
+.icon2:hover{
+    background: url(./icon3W.png)no-repeat;
+    background-position: center;
+    
+}
+.icon3{
+    background: url(./icon4B.png)no-repeat;
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+.icon3:hover{
+    background: url(./icon4W.png)no-repeat;
+    background-position: center;
+}
+}.service~strong{
+    line-height: 24px;
+    margin-bottom: 20px;
+    font-size: 21px;
+    text-align: center;
+    margin-top: 20% ;
+    transition: all 180ms ease-in-out;
+}strong:hover{
+    color: white;
+}
+.description{
+    margin-top: 17%;
+    width: 174px;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+.service~.description:hover{
+    color: white;
+

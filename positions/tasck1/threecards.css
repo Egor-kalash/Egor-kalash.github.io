@@ -61,6 +61,8 @@ body{background-color: #b07cf7;}
 }
 
 .button{
+    display: inline-block;
+    margin-left: 42%;
     margin: auto;
     border: 2px solid #f72b3b ;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);

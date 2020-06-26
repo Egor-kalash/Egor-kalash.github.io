@@ -74,7 +74,8 @@ ol:active{
 }
 
 .grid{
-    margin: auto;
+    grid-area: center;
+    
     flex-wrap: wrap;
     display: inline-flex;
 }

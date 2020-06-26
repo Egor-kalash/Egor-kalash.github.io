@@ -1,0 +1,142 @@
+body{
+    background-color: #f6f6f6;
+}
+
+.header{
+    text-align: center;
+}
+
+.title{
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    color: #3c3c3c;
+    letter-spacing: 8.95px;
+    font-size: 34px;
+}
+
+hr{
+    margin-top: 20px;
+    border: 1px solid #dddbdb;
+    text-align: center;
+    height: 3px;
+    width: 44px;
+    background-color: #dddbdb;
+}
+
+.icons{
+    padding-bottom: 93px;
+    height: 175px;
+    width: 256px;
+    margin-right: 19%;
+    padding-left: 5%;
+    text-decoration: none;
+    margin-top: -268px;
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+}
+
+.icons:hover{
+    background-color: #00aed9;
+    opacity: 1;
+}
+
+ul{
+    padding-top: 90px;
+    display: inline-flex;
+}
+
+ol{
+    padding:4px;
+    transition: all 13s0ms ease-in-out;
+}
+
+ol:hover{
+    -webkit-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    transform: scale(1.03);
+}
+
+ol:active{
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.description{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    font-family: 'Lato', sans-serif;
+    color: #3c3c3c;
+    font-size: 16px;
+    line-height: 24px;
+    width: 561px;
+}
+
+.grid{
+    margin: auto;
+    flex-wrap: wrap;
+    display: inline-flex;
+}
+
+.people{
+    padding: 15px;
+}
+
+.person,
+.person3,
+.person4{
+    height: 268px;
+    width: 269px;
+    transition: all 300ms ease-in-out;
+}
+
+.person{
+    background-image: url(./man.png);
+    
+}
+
+.person3{
+    background-image: url(./women2.png);
+}
+
+.person4{
+    background-image: url(./women.png);
+}
+
+.person:hover{
+    width: 269px;
+    height: 268px;
+    background-image: url(./Rectangle_4.png);
+}
+
+.person3:hover{
+    width: 269px;
+    height: 268px;
+    background-image: url(./Rectangle_4.png);
+}
+
+.person4:hover{
+    width: 269px;
+    height: 268px;
+    background-image: url(./Rectangle_4.png);
+    
+}
+
+.name{
+    padding-top: 5px;
+    line-height: 30px;
+    color: #282528;
+    font-size: 18px;
+    font-family: "Lato - Bold";
+    
+    
+}
+
+.profession{
+    
+    color: #646464;
+    font-family: "Lato Light";
+    font-size: 14px;
+
+}

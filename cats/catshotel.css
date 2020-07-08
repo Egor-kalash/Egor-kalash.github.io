@@ -73,7 +73,7 @@ body{
 
 .imgshka{
     display: flex;
-    width:1366px
+    width: 1366px;
     height: 504px;
     background: url(./cathotel.png) no-repeat;
 }
@@ -334,7 +334,7 @@ left: 198px;}
 
 .loc__img{
     display: flex;
-    width:1366px
+    width:1366px;
     background: url(./place.png);
     height: 580px;
 }

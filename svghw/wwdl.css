@@ -296,6 +296,8 @@ body{
     display: flex;
   }
 
+  .icon__black{margin-left: auto;}
+
   .logo{
     margin-left: auto;
     margin-right: 15px;

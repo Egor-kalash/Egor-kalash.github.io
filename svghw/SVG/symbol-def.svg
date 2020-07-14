@@ -1,0 +1,11 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-b" viewBox="0 0 31 32">
+<path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="0.9014" d="M28.699 31.034l-12.987-24.789-12.987 24.789h25.974z"></path>
+<path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="0.9014" d="M15.549 0.451c8.213 0.072 14.843 6.747 14.843 14.97 0 8.268-6.703 14.971-14.971 14.971s-14.971-6.703-14.971-14.971c0-0 0-0 0-0v0c0.037-8.275 6.753-14.97 15.034-14.97 0.023 0 0.045 0 0.068 0h-0.004z"></path>
+<path d="M15.712 28.781c0.884 0.007 1.597 0.725 1.597 1.61 0 0.889-0.721 1.61-1.61 1.61s-1.61-0.721-1.61-1.61v0c0.004-0.89 0.726-1.61 1.617-1.61 0.002 0 0.004 0 0.006 0h-0z"></path>
+<path d="M29.352 30.387c0 0.899-0.728 1.627-1.627 1.627s-1.627-0.728-1.627-1.627c0-0.899 0.728-1.627 1.627-1.627s1.627 0.728 1.627 1.627z"></path>
+<path d="M2.724 28.781c0.884 0.007 1.597 0.725 1.597 1.61 0 0.889-0.721 1.61-1.61 1.61s-1.61-0.721-1.61-1.61v0c0.004-0.89 0.726-1.61 1.617-1.61 0.002 0 0.004 0 0.006 0h-0z"></path>
+</symbol>
+</defs>
+</svg>

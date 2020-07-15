@@ -2,7 +2,9 @@ body{
     margin: 0;
 }
 
-
+.logo-img{
+  fill: rgb(255, 255, 255);
+}
 
 .borders__wight{border: 2px solid rgb(255, 255, 255);height: 247px;}
 
@@ -267,6 +269,7 @@ body{
   }
 
   .icon__scroll{
+    fill: rgb(255, 255, 255);
     position: absolute;
     width: 23px;
     height: 37px;
@@ -281,6 +284,11 @@ body{
   @keyframes timing {
 
     100%{
+      bottom: 30px;
+      
+    }
+
+    50%{
         bottom: 38px;
     }
 
@@ -291,12 +299,15 @@ body{
 
   
   footer{
-    margin-top: 20px;
+    margin-top: 20px ;
     align-items: center;
     display: flex;
   }
 
-  .icon__black{margin-left: auto;}
+  .icon__black{
+    display: inline-block;
+    margin-left: auto;
+  }
 
   .logo{
     margin-left: auto;
@@ -306,7 +317,6 @@ body{
   }
 
   .foot{
-    
     margin-right: auto;
     font-size: 14px;
     font-family: "Lato";
@@ -315,3 +325,6 @@ body{
     z-index: 31;
   }
 
+  .logo{
+    margin-left:auto ;
+  }

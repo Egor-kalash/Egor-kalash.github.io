@@ -1,0 +1,130 @@
+body{margin: 0;}
+
+.hero{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.hero-back{
+    position: absolute;
+    width: 1160px;
+    height: 482px;
+    border-radius: 4px;
+}
+
+.hero__media{position: relative;}
+
+
+img.hero__img{
+    display: block;
+    width: 100%;
+    height: 482px;
+    object-fit: cover;
+    background-color: grey;
+}
+
+.arrow{
+    position: relative;
+    width: 41px;
+    height: 20px;
+}
+
+.arrows__btm{
+    display: flex;
+    position: absolute;
+    margin-left: 1047px;
+    margin-top: 438px;
+}
+
+.grey{fill: #cacaca;}
+
+.h3{margin-left: 3.5%;}
+
+.cards{
+    display: inline-flex;
+    margin-right: auto;
+    margin-left: 1.88%;
+}
+
+
+footer{
+    display: flex;
+    background-color: #F9F9FB;
+    width: 100%;
+    height: 356px;
+}
+
+.h-d{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+
+
+.help{min-width: 140px;}
+
+.h-d{margin-bottom: 11px;}
+
+.help-d{
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 11px;
+}
+
+.icons{display: flex;}
+
+.insta{margin-left: -10px;}
+
+.footer{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    margin-top: 58px;
+}
+
+.footer > *{margin-right: 240px;}
+
+.follow{margin-left: 3%;}
+
+.about_us{min-width: 78px;}
+
+.legal{min-width: 132px;}
+
+.follow > *{margin-bottom: 18px;}
+
+.social{width: 20px;height: 20px;margin: 10px;}
+
+.follow_us{display: flex;}
+
+.border{
+    position: absolute;
+    border-top: 1px solid #AFB1BD;
+    width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 240px;
+}
+
+.last{
+    position: absolute;
+    font-family: 'Inter' , sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #AFB1BD;
+    margin-left: 4%;
+    margin-top: 260px;
+}
+
+.buy{display: flex;position: absolute;bottom: 0;}
+
+.buy > *{margin: 15px;}
+
+.lupa{width: 20px;height: 20px;margin: auto;margin-top: 6px;}
+
+.card-product:not(:hover) .buy{display: none;}

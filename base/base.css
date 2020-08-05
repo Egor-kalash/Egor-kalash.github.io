@@ -193,6 +193,11 @@ h2,h3{
     margin-left: -10px;
 }
 
+.social{
+  width: 20px;
+  height: 20px;
+}
+
 .main__icons > *{margin: 10px;}
 
 /* .checkbox:checked{transform: rotate(180deg);} */
@@ -400,7 +405,7 @@ h2,h3{
 
 .color{border: 3px solid #595CFF;}
 
-.o{width: 24px;height: 24px;margin: 10px;}
+
 
 .ic{transition:170ms ease-in-out;}
 

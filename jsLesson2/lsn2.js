@@ -60,10 +60,10 @@ alert('next')
 let year = prompt('Write any year')
 
 
-if (year % 400 && 2020 % 400){
+if (year % 400 && 400 % 400){
     alert('This year is leap' )
 }
-else{alert('This year is not leap');}
+else;{alert('This year is not leap');}
 
  alert('next')
 
@@ -125,7 +125,7 @@ alert('next')
 
 // скидочки
 
-let p = prompt('put a purchase amount')
+let p = prompt('put a purchase amount');
 
 let  pa = p/1
 
@@ -143,7 +143,7 @@ else if (pa > 300 && pa <= 500) {
 
     alert('You must pay: '+ uts);
 }
-else(pa > 500); {
+else (pa > 500 && pa < 1000000000000000); {
     let pawp = pa / 100 * 7
 
     let uts = pa - pawp
@@ -156,9 +156,9 @@ alert('next')
 
 //  круг и квадрат
 
-let c = prompt('введи любую длинну окружности')
+let c = prompt('введи любую длинну окружности');
 
-let pr = prompt('введи любуй периметр')
+let pr = prompt('введи любуй периметр');
 
 // r == c / (2 * 3.14) 
 

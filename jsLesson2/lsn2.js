@@ -63,7 +63,7 @@ let year = prompt('Write any year')
 if (year % 400 && 2020 % 400){
     alert('this year is leap' )
 }
-else {alert('This year is not leap')}
+else {alert('This year is not leap');}
 
  alert('next')
 

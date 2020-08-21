@@ -61,9 +61,9 @@ let year = prompt('Write any year')
 
 
 if (year % 400 && 2020 % 400){
-    alert('this year is leap' )
+    alert('This year is leap' )
 }
-else {alert('This year is not leap');}
+else{alert('This year is not leap');}
 
  alert('next')
 
@@ -143,16 +143,14 @@ else if (pa > 300 && pa <= 500) {
 
     alert('You must pay: '+ uts);
 }
-else if (pa > 500) {
+else(pa > 500); {
     let pawp = pa / 100 * 7
 
     let uts = pa - pawp
 
     alert('You must pay: '+ uts);
 }
-else (pa < 200); {
-    alert('Any sale! You must pay: ' + pa + ' uan')
-}
+
  
 alert('next')
 

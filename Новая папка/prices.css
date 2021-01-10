@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+
+
+.fifth{
+    background-color: #f3f3f3;
+}
+
+.prices{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.price{
+    height: 300px;
+    width: 235px;
+    background-color: #fff;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.upsite{
+    text-transform: uppercase;
+    width: 235px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    background-color: #19bd9a;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+
+
+.main_part{text-align: center;}
+
+.back{
+    display: none;
+    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.title2{
+    font-weight: lighter;
+}
+
+.price-value{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 45px;
+    font-weight: 900 ;
+    margin-top: 66px;
+    color: #19bd9a;
+}
+
+.price-description{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600; 
+    color: #81868e;
+    margin-top: 12px;
+}
+
+.descriptions{
+    margin-top: -174px;
+    font-size: 14px;
+    font-weight: lighter;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.descriptions > *{
+    margin-bottom: 10px;
+    color: black;
+    margin-left: 30px;
+    color: #81868e;
+}
+
+.price:hover {transition: 0.25s ease;} 
+.price:hover .upsite{transition:  0.25s ease ;margin-top: 36px;}
+.price:hover .back{display: flex;}
+.price:hover .titl{display: none;}
+.price:hover .descriptions{text-align: left; transition: ease 0.25s;margin-top: 35px;}
+
+.icon-chevron-right:before {
+    font-size: 20px;
+}
+
+.back:hover .title2{animation: arr 0.33s ease-in-out forwards;}
+
+@keyframes arr{
+    50%{margin-right:5px;margin-left: 5px;}
+    100%{margin-right: 0;margin-left: 0;}
+}

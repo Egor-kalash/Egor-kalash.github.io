@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    }
+    
+    body {
+    background: #fff; 
+    font-family: arial, verdana, tahoma;
+    }
+    
+    .accordian {
+    width: 725px; height: 300px;
+    overflow: hidden;
+    margin: 50px auto;
+    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+    }
+    
+    /*Небольшой хак для предотвращения мелькания на некоторых браузерах*/
+    .accordian ul {
+    width: 2000px;
+    }
+    
+    .accordian li {
+    position: relative;
+    display: block;
+    width: 180px;
+    float: left;
+    border-left: 1px solid #888;
+    /* создание тени */     
+    -webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);	
+    box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+    /* Создание анимации с помощью переходов */
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;	
+    transition: all 0.5s;
+    }
+    
+    /* Уменьшить ширину для неактивных изображений */
+    .accordian ul:hover li {
+    width: 40px;
+    }
+    
+    /* Задание ширины изображения при поднесении к ней курсора */
+    /* Данный стиль (li:hover) переопределит ul:hover */
+    .accordian ul li:hover {
+    width: 600px;
+    }
+    
+    .accordian li img {
+    display: block;
+    }
+    
+    /* Стиль для блока, содержащего ссылку */
+    .image_title {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    bottom: 0;	
+    width: 600px;	
+    }
+    
+    /* Стиль для ссылки */
+    .image_title a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    font-size: 16px;
+    }

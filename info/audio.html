@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equi="X-UA-Compatible" coontent="ie=edge">
+    
+    <title>
+        audio
+    </title>
+</head>
+<body>
+<audio preload="auto"  controls >
+    <source src="Sailor's_Song-Joel_Cummins.mp3" type="audio/mp3">
+  </audio>
+  <style>
+      /* audio{opacity: 0;} */
+  </style>
+  <audio preload="auto" controls autoplay loop >
+    <source src="Sailor's_Song-Joel_Cummins.mp3" type="audio/mpeg">
+</audio>
+<audio src="info/Sailor's_Song-Joel_Cummins.mp3" type="audio/mp3"></audio>
+
+<script>
+    window.addEventListener("DOMContentLoaded", event => {
+  const audio = document.querySelector("audio");
+  audio.volume = 0.5;
+  audio.play();
+});
+</script>
+
+</body>
+</html>

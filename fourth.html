@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equi="X-UA-Compatible" coontent="ie=edge">
+    <link rel="stylesheet" href="./fourth.css">
+    <link rel="stylesheet" href="./audio.css ">
+    <title>
+        fourth
+    </title>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">
+            <img src="./play.png" id="icon">
+        </div>
+        <div class="fullscreen-bg">
+                <video id="myVideo" loop=""  muted="fauls" class="fullscreen-bg__video">
+                    <source src="videoplayback.mp4" type="video/mp4">
+                    <source src="videoplayback.webm" type="video/webm">
+                </video>
+        </div>
+            <audio id="mySong">
+                <source src="./Sailor's_Song-Joel_Cummins.mp3" type="audio/mpeg">
+            </audio>
+        <!-- <div id="button" class="button"></div> -->
+    </div>
+    <script>
+            let mySong = document.getElementById("mySong");
+            let icon = document.getElementById("icon"); 
+            let myVideo = document.getElementById("myVideo");
+
+            icon.onclick = function(){
+            mySong.play();
+            myVideo.play();
+            icon.hidden = true;
+            
+            }
+
+    </script>
+    </body>
+</html>

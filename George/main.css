@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color: #000000;
+    background-color: #ffffff;
 }
 
 a{
@@ -9,20 +9,97 @@ a{
 
 .background{
     height: 100vh;
-    width: 100%;
+    /* width: 100vw; */
     border-radius: 5px;
     margin: auto;
 }
 
+.interact{
+    height:100%;
+    margin-top: 100px;
+}
+
+.leafs{
+    position: absolute;
+    animation: root 15s infinite linear;
+    z-index: -1;
+    top: 40%;
+    left: 50%;
+}
+
+.bgimg{
+    color: azure;
+    height: 100px;
+    display: inline;
+    position: absolute;
+    rotate: -30deg;
+    z-index: -1;
+}
+
+.bgimg0{
+    height: 160px;
+    margin-top: 391px;
+    margin-left: -182px;
+    animation: leaf1 11s linear 0s infinite;
+}
+.bgimg1{
+    height: 138px;
+    margin-top: -338px;
+    margin-left: 238px;
+    animation: leaf1 10s linear 0s infinite;
+}
+
+.leaf3{
+    animation: leaf3 10s linear 0s infinite;
+}
+
+.leaf2{
+    animation: leaf2 7s linear 0s infinite;
+}
+
+.bgimg2{
+    height: 100px;
+    margin: 60px;
+    margin-top: 100px;
+    margin-left: 347px;
+    animation: leaf1 8s linear 0s infinite;
+}
+
+.bgimg3{
+    height: 100px;
+    margin: 60px;
+    margin-top: 82px;
+    margin-left: -496px;
+    animation: leaf1 7s linear 0s infinite;
+}
+
+.bgimg4{
+    height: 73px;
+    margin: 60px;
+    margin-top: -485px;
+    margin-left: -236px;
+    animation: leaf1 7s linear 0s infinite;
+}
+
+.bgimg5{
+    height: 73px;
+    margin: 60px;
+    margin-top: -101px;
+    margin-left: -187px;
+    animation: leaf1 6s linear 0s infinite;
+}
+
 .photo{
+    margin-top: 100px;
     height: 400px;
     width: 400px;
     margin: auto;
-    background-color: white;
+    background-color: black;
     border-radius: 30px;
 }
 
 .buttons{
+    margin-top: 10px;
     display: grid;
     margin: auto;
     justify-content: center;
@@ -30,6 +107,7 @@ a{
 }
 
 .button{
+    box-shadow: 10px 10px black;
     background-color: red;
     height: 60px;
     padding: 30px;
@@ -46,12 +124,30 @@ a{
     display: flex;
 }
 
-.background > * {
-    margin-top: 100px;
-}
-
 .button:active{
     background-color: white;
     color: #000000;
-    text-shadow: white;
+    text-shadow: none;
+}
+
+@keyframes root {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+
+@keyframes leaf2 {
+    0% { transform: scale(1); }
+    50% { transform:scale(0.7); }
+    100% { transform:scale(1); }
+}
+
+@keyframes leaf1 {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(-360deg); }
+}
+
+@keyframes leaf3 {
+    0% { transform: scale(1); }
+    50% { transform:scale(1.5); }
+    100% { transform:scale(1); }
 }

@@ -124,7 +124,13 @@ a{
     display: flex;
 }
 
-.button:active{
+button:active{
+    background-color: white;
+    color: #000000;
+    text-shadow: none;
+}
+
+a:active{
     background-color: white;
     color: #000000;
     text-shadow: none;

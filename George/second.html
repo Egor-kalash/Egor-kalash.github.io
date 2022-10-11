@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./second.css">
+        <title>Agenda</title>
+    </head>
+    <body>
+        <div class="background">
+            <div class="leafs">
+                <img class="bgimg0 bgimg leaf2" src="maple.png" alt="" srcset="">
+            </div>
+            <div class="leafs">
+                <img class="bgimg1 bgimg leaf2" src="star.png" alt="" srcset="">
+            </div>
+            <div class="leafs">
+                <img class="bgimg2 bgimg leaf3" src="maple.png" alt="" srcset="">
+            </div>
+            <div class="leafs">
+                <img class="bgimg3 bgimg leaf3" src="star.png" alt="" srcset="">
+            </div>
+            <div class="leafs">
+                <img class="bgimg4 bgimg leaf3" src="maple.png" alt="" srcset="">
+            </div>
+            <div class="interact">
+                <div class="title">
+                    <div class="upper">My Agenda</div>
+                    <br><br>
+                    <div class="down">
+                    Here are ideas presented that <br>I will implement in our school life<br>when I become the Prime Minister
+                    </div>
+                </div>
+                <div type="button" onclick="changeStyle()" id="myPara" class="photo">
+                    <div id="title" style="display: none;" class="par_title"></div>
+                    <div class="par" id="par"><strong>Psychologist</strong> <br>(click to extend)</div> 
+                </div>
+                <div type="button" onclick="changeStyle2()" id="myPara2" class="photo">
+                    <div id="title2" class="par_title"></div>
+                    <div class="par" id="par2"> <strong>Late Library Hours</strong> <br>(click to extend)</div> 
+                </div>
+                <div type="button" onclick="changeStyle3()" id="myPara3" class="photo">
+                    <div id="title3" class="par_title"></div>
+                    <div class="par" id="par3"> <strong>Late Buses</strong> <br>(click to extend)</div> 
+                </div>
+                <div type="button" onclick="changeStyle4()" id="myPara4" class="photo">
+                    <div id="title4" class="par_title"></div>
+                    <div class="par" id="par4"> <strong>Late Library Hours</strong> <br>(click to extend)</div> 
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            function changeStyle(){
+        var element = document.getElementById('myPara');
+        var element2 = document.getElementById('par');
+        var title = document.getElementById('title');
+        element.style.height = "200px";
+        title.style.display = "block";
+        title.innerHTML ="Psychologist";
+        element2.innerHTML ="       I want every man and woman in this school to feel that they have someone to talk to about their problems, concerns, and struggles. Therefore, I will bring the school psychologist to our school. For me, the Mental Health of the students is the main part of the school life."
+    }
+            function changeStyle2(){
+        var element = document.getElementById('myPara2');
+        var element2 = document.getElementById('par2');
+        var title = document.getElementById('title2');
+        element.style.height = "200px";
+        title.style.display = "block";
+        title.innerHTML ="Late Library Hours";
+        element2.innerHTML = "During my long experience of studying in 5 different schools, 3 of which were in Ukraine, 1 in Germany, and the G.P. Vanier, I noticed that libraries, even though, they are the perfect fit for studying, close as soon as the school. Here I am going to change that, I will make the library stay open for a longer period of time, so you could stay there after school."
+    }
+            function changeStyle3(){
+        var element = document.getElementById('myPara3');
+        var element2 = document.getElementById('par3');
+        var title = document.getElementById('title3');
+        element.style.height = "200px";
+        title.style.display = "block";
+        title.innerHTML ="Late Buses";
+        element2.innerHTML = "Many students at our school stay after classes almost every day. I know it because I am one of those, so, wouldn’t it be great to have more late buses? Therefore, I will introduce this idea to the school administration and the city council, to schedule a few more late buses for the school, on Wednesday. "
+    }
+            function changeStyle4(){
+        var element = document.getElementById('myPara4');
+        var element2 = document.getElementById('par4');
+        var title = document.getElementById('title4');
+        element.style.height = "200px";
+        title.style.display = "block";
+        title.innerHTML ="Late Library Hours";
+        element2.innerHTML = "There are various numbers of big and small local and national level businesses, such as “Thrifty foods,” “Walmart,” and “London Drugs”. When I become a student body Prime Minister of Vanier, I will encourage those enterprises to donate and help our school to grow!"
+    }
+        </script> 
+    </body>
+</html>

@@ -34,20 +34,25 @@
                 </div>
                 <div type="button" onclick="changeStyle()" id="myPara" class="photo">
                     <div id="title" style="display: none;" class="par_title"></div>
-                    <div class="par" id="par"><strong>Psychologist</strong> <br>(double tap to extend)</div> 
+                    <div class="par" id="par"><strong>Psychologist</strong> <br>(double click to extend)</div> 
+                </div>
+                <div type="button" onclick="changeStyle5()" id="myPara5" class="photo">
+                    <div id="title5" class="par_title"></div>
+                    <div class="par" id="par5"> <strong>Climat Change</strong> <br>(double click to extend)</div> 
                 </div>
                 <div type="button" onclick="changeStyle2()" id="myPara2" class="photo">
                     <div id="title2" class="par_title"></div>
-                    <div class="par" id="par2"> <strong>Late Library Hours</strong> <br>(double tap to extend)</div> 
+                    <div class="par" id="par2"> <strong>Late Library Hours</strong> <br>(double click to extend)</div> 
                 </div>
                 <div type="button" onclick="changeStyle3()" id="myPara3" class="photo">
                     <div id="title3" class="par_title"></div>
-                    <div class="par" id="par3"> <strong>Late Buses</strong> <br>(double tap to extend)</div> 
+                    <div class="par" id="par3"> <strong>Late Buses</strong> <br>(double click to extend)</div> 
                 </div>
                 <div type="button" onclick="changeStyle4()" id="myPara4" class="photo">
                     <div id="title4" class="par_title"></div>
-                    <div class="par" id="par4"> <strong>Late Library Hours</strong> <br>(double tap to extend)</div> 
+                    <div class="par" id="par4"> <strong>Late Library Hours</strong> <br>(double click to extend)</div> 
                 </div>
+                
             </div>
         </div>
         
@@ -88,6 +93,16 @@
         title.innerHTML ="Late Library Hours";
         element2.innerHTML = "There are various numbers of big and small local and national level businesses, such as “Thrifty foods,” “Walmart,” and “London Drugs”. When I become a student body Prime Minister of Vanier, I will encourage those enterprises to donate and help our school to grow!"
     }
+            function changeStyle5(){
+        var element = document.getElementById('myPara5');
+        var element2 = document.getElementById('par5');
+        var title = document.getElementById('title5');
+        element.style.height = "200px";
+        title.style.display = "block";
+        title.innerHTML ="Climat Change";
+        element2.innerHTML = "The climate change is the biggest threat for our planet Earth right now. But can we do? What I will make during my service in the office is engaging students and staff of the school to follow the tend of sorting the trash and switching from the plastic to the recyclable materials! ";
+    }
+    
         </script> 
     </body>
 </html>

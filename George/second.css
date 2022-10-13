@@ -26,7 +26,9 @@ a{
 }
 
 .upper{
+    background: white;
     font-size: 50px;
+    display: inline;
 }
 
 .down{

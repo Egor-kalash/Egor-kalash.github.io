@@ -36,6 +36,10 @@
                     <div id="title" style="display: none;" class="par_title"></div>
                     <div class="par" id="par"><strong>Psychologist</strong> <br>(double click to extend)</div> 
                 </div>
+                <div type="button" onclick="changeStyle6()" id="myPara6" class="photo">
+                    <div id="title6" class="par_title"></div>
+                    <div class="par" id="par6"> <strong>Bring back Yearbook quotes</strong> <br>(double click to extend)</div> 
+                </div>
                 <div type="button" onclick="changeStyle5()" id="myPara5" class="photo">
                     <div id="title5" class="par_title"></div>
                     <div class="par" id="par5"> <strong>Climat Change</strong> <br>(double click to extend)</div> 
@@ -101,6 +105,15 @@
         title.style.display = "block";
         title.innerHTML ="Climat Change";
         element2.innerHTML = "The climate change is the biggest threat for our planet Earth right now. But can we do? What I will make during my service in the office is engaging students and staff of the school to follow the tend of sorting the trash and switching from the plastic to the recyclable materials! ";
+    }
+            function changeStyle6(){
+        var element = document.getElementById('myPara6');
+        var element2 = document.getElementById('par6');
+        var title = document.getElementById('title6');
+        element.style.height = "200px";
+        title.style.display = "block";
+        title.innerHTML ="Bring back Yearbook quotes";
+        element2.innerHTML = "The quotes were an increadible and very significant of the graduation. People with whom you studied for years had a chance to write something nice and funny about you just as you could too. Therefore, following the requests from my electorate I state that I will bring them back!";
     }
     
         </script> 

@@ -1,0 +1,75 @@
+body{
+    text-align: center;
+    margin: 0;
+    min-width: 100%;
+    font-family: 'Noto Serif Telugu', serif;
+}
+article{
+    margin: auto;
+    text-align: center;
+    min-width: 0px;
+    max-width: 500px;
+    padding: 0;
+}
+
+article>*{
+    margin: 10px;
+}
+
+h1{
+    margin-top: 40px;
+    font-weight: 700;
+    font-size: 40px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+p{
+    margin-bottom: 20px;
+    text-align: left;
+    margin: 10px;
+    margin-bottom: 30px;
+}
+
+.picture{
+    width: 100%;
+    margin: auto;
+    font-family: 'EB Garamond', serif;
+    height: 100%;
+}
+
+.img,
+img{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.quote,
+.author,
+.date{
+    text-align: right;
+    padding: 5px;
+}
+
+.author{
+    font-size: 10px;
+    padding: 0;
+}
+
+.date{
+    font-size: 10px;
+    padding: 0;
+}
+
+.text-main{
+    color: #767575;
+    font-size: 10px;
+    text-align: left;
+    margin: 10px;
+}
+
+.sub-text{
+    text-align: right;
+    font-size: 10px;
+    color: #767575;
+}

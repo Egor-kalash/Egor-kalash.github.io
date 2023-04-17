@@ -12,6 +12,12 @@ article{
     padding: 0;
 }
 
+a{
+    text-transform: none;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
 article>*{
     margin: 10px;
 }
@@ -72,5 +78,12 @@ img{
     text-align: right;
     font-size: 10px;
     color: #767575;
-    margin: 10px;
 }
+
+.title-sources{
+    font-size: 30px;
+}
+
+.a{color: black;}
+
+.a1{color: #767575;}

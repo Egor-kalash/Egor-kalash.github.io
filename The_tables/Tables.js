@@ -86,14 +86,14 @@ fetch(FULL_URL)
                 TPresent.push(person.name)
             }
             // figute that out
-            if (person.tableR == m){
+            //if (person.tableR == m){
                 
-                let table_ = document.createElement('div');
-                table_.id = 'table';
-                tables.append(table_);
-                table_.innerHTML = ("Table "+ j + ": " + person.name);
-            }
-            m++;
+                //let table_ = document.createElement('div');
+                //table_.id = 'table';
+                //tables.append(table_);
+                //table_.innerHTML = ("Table "+ j + ": " + person.name);
+            //}
+            //m++;
         };
         
         

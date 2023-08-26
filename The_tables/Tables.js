@@ -127,7 +127,7 @@ fetch(FULL_URL)
     let maxTableNumber = 0; // Initialize the maximum table number
     for (let i = 0; i < len; i++) {
         // map(cell => cell.v) function used to create an array of values of v
-        let personData = data.table.rows[i].c.map(cell => cell && cell.v ? cell.v : null);
+        let personData = data.table.rows[i].c.map(cell => cell.v)
         console.log(personData);
         let [name, present, tableR, appetizer, water, carafe, cup, mug, small_milk, milk, cran_juice] = personData;
         let person = new Resident(name, present, tableR, appetizer, water, carafe, cup, mug, small_milk, milk, cran_juice);
@@ -224,10 +224,10 @@ fetch(FULL_URL)
         }
         
         // remove the table (add maybe)
-        // let count = document.getElementById('table_' + i).childElementCount;
-        // if (count <1){
-        //     table_box.remove(table_)
-        // }
+        let count = document.getElementById('table_' + i).childElementCount;
+        if (count <1){
+            table_box.remove(table_)
+        }
 
         j++;
     }

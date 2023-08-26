@@ -22,11 +22,13 @@ fetch(FULL_URL)
     // the name
     console.log(data.table.rows[0].c[0].v);
     console.log(data.table.cols[0].label)
+    //counters
     let residents = [];
     let cold = [];
     let half = [];
     let noIce = [];
     let milky = [];
+    let smallMilkAmount = [];
     let appetizers = [];
     let cranCount = [];
     let TPresent = [];
@@ -67,6 +69,14 @@ fetch(FULL_URL)
     milk_indicator.className = 'indicator'
     Milk.id = "milk";
     Milk.className = "list_value";
+
+    let smallMilk = document.createElement('div');
+    let small_milk_indicator = document.createElement('div');
+    
+    small_milk_indicator.id = 'indicator_milk_small'
+    small_milk_indicator.className = 'indicator'
+    smallMilk.id = "smallMilk";
+    smallMilk.className = "list_value";
 
     let V8 = document.createElement('div');
     let V8_indicator = document.createElement('div');
@@ -135,7 +145,7 @@ fetch(FULL_URL)
                 if (person.milk.toLowerCase() == "y" || person.milk == "yes") milky.push(person);
                 if (person.appetizer.toLowerCase() == "v8" || person.milk == "no") appetizers.push(person);
                 if (person.cran_juice.toLowerCase() == "y" || person.milk == "yes") cranCount.push(person);
-
+                if (person.small_milk.toLowerCase() == "y" || person.milk == "yes") smallMilkAmount.push(person);
                 TPresent.push(person);
 
                 // Check if the current table number is greater than the current maximum
@@ -194,6 +204,11 @@ fetch(FULL_URL)
                         let milk_indicatorClone = milk_indicator.cloneNode(true);
                         table_person.append(milk_indicatorClone);
                     }
+
+                    if (residents[k].small_milk.toLowerCase() == 'y' || residents[k].small_milk.toLowerCase() == 'yes') {
+                        let smallMilk_indicatorClone = small_milk_indicator.cloneNode(true);
+                        table_person.append(smallMilk_indicatorClone);
+                    }
                     
                     if (residents[k].appetizer.toLowerCase() == 'v8' || residents[k].appetizer.toLowerCase() == 'no') {
                         let V8_indicatorClone = V8_indicator.cloneNode(true);
@@ -233,8 +248,12 @@ fetch(FULL_URL)
     NoIce.prepend(noice);
     
     attributes.append(Milk);
-    Milk.innerHTML = ("Milk: <strong>"+milky.length);
+    Milk.innerHTML = (`Milk: <strong>${milky.length}`);
     Milk.prepend(milk_indicator)
+    
+    attributes.append(smallMilk);
+    smallMilk.innerHTML = (`Small jug of milk: <strong>${smallMilkAmount.length}`);
+    smallMilk.prepend(small_milk_indicator)
     
     attributes.append(V8);
     V8.innerHTML = (`V8 juice: <strong>${appetizers.length}`);
@@ -243,10 +262,18 @@ fetch(FULL_URL)
     attributes.append(Cran);
     Cran.innerHTML = (`Cranberry juice: <strong>${cranCount.length}`);
     Cran.prepend(Cran_indicator)
+
     let ifs = document.createElement('div')
     attributes.append (ifs);
-    ifs.innerHTML = `<strong>If table's missing, no people are there.`
+    ifs.innerHTML = `<strong>If table's missing, no people are sitting there.`
     ifs.style.margin = "5px"
+
+    // let overallGlasses = document.createElement('div');
+    // let glassesRequired = Number(appetizers.length) + Number(cranCount.length) + Number(milky.lengt) + Number(noIce.length) + Number(half.length) + Number(cold.length);
+    // attributes.append(overallGlasses);
+    // console.log(glassesRequired)
+    // overallGlasses.innerHTML = `Glasses required: ${glassesRequired}`
+    // overallGlasses.style.margin = "5px"
     
     console.log("length of the data list: "+data.table.rows.length);
     console.log("ppl present: "+TPresent.length);

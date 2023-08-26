@@ -14,6 +14,13 @@ body{
     margin-left: 5px;
 }
 
+.indicator{
+    display: inline-block;
+    border-radius: 3px;
+    width: 15px;
+    height: 15px;
+}
+
 #indicator_cold{
     background-color: #0c9edd;
 }
@@ -30,6 +37,12 @@ body{
     border: 1px solid black;
 }
 
+#indicator_milk_small{
+    border: 1px solid black;
+    width: 10px;
+    height: 10px;
+}
+
 #indicator_V8{
     background-color: red;
 }
@@ -38,12 +51,7 @@ body{
     background-color: rgb(247, 16, 181);
 }
 
-.indicator{
-    display: inline-block;
-    border-radius: 3px;
-    width: 15px;
-    height: 15px;
-}
+
 
 #attributes{
     margin-top: 10px;

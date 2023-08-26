@@ -127,7 +127,7 @@ fetch(FULL_URL)
     let maxTableNumber = 0; // Initialize the maximum table number
     for (let i = 0; i < len; i++) {
         // map(cell => cell.v) function used to create an array of values of v
-        let personData = data.table.rows[i].c.map(cell => cell.v)
+        let personData = data.table.rows[i].c.map(cell => cell && cell.v ? cell.v : null);
         console.log(personData);
         let [name, present, tableR, appetizer, water, carafe, cup, mug, small_milk, milk, cran_juice] = personData;
         let person = new Resident(name, present, tableR, appetizer, water, carafe, cup, mug, small_milk, milk, cran_juice);

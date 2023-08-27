@@ -223,7 +223,7 @@ fetch(FULL_URL)
             }
         }
         
-        // remove the table (add maybe)
+        // remove the table 
         let count = document.getElementById('table_' + i).childElementCount;
         if (count <1){
             table_box.remove(table_)

@@ -1,3 +1,5 @@
+// make a cycle that takes a value from an array as id from elements. Replace the current attributes
+
 let SHEET_ID = '1VHwKv2r_jDoGLT6nWFqCI8k-ZGmKNEJqDkkbo1wVygQ';
 let SHEET_TITLE = 'residents';
 let SHEET_RANGE = 'A1:Z1000';

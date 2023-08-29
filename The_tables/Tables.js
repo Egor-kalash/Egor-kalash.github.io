@@ -32,6 +32,7 @@ fetch(FULL_URL)
     let milky = [];
     let smallMilkAmount = [];
     let appetizers = [];
+    let mugAmount = [];
     let cranCount = [];
     let TPresent = [];
     let variables = [];
@@ -79,6 +80,14 @@ fetch(FULL_URL)
     small_milk_indicator.className = 'indicator'
     smallMilk.id = "smallMilk";
     smallMilk.className = "list_value";
+    
+    let Mug = document.createElement('div');
+    let Mug_indicator = document.createElement('div');
+    
+    Mug_indicator.id = 'indicator_mug'
+    Mug_indicator.className = 'indicator'
+    Mug.id = "Mug";
+    Mug.className = "list_value";
 
     let V8 = document.createElement('div');
     let V8_indicator = document.createElement('div');
@@ -147,7 +156,8 @@ fetch(FULL_URL)
                 if (person.milk.toLowerCase() == "y" || person.milk == "yes") milky.push(person);
                 if (person.appetizer.toLowerCase() == "v8" || person.milk == "no") appetizers.push(person);
                 if (person.cran_juice.toLowerCase() == "y" || person.milk == "yes") cranCount.push(person);
-                if (person.small_milk.toLowerCase() == "y" || person.milk == "yes") smallMilkAmount.push(person);
+                if (person.small_milk.toLowerCase() == "y" || person.small_milk == "yes") smallMilkAmount.push(person);
+                if (person.mug.toLowerCase() == "y" || person.mug == "yes") mugAmount.push(person);
                 TPresent.push(person);
 
                 // Check if the current table number is greater than the current maximum
@@ -211,7 +221,11 @@ fetch(FULL_URL)
                         let smallMilk_indicatorClone = small_milk_indicator.cloneNode(true);
                         table_person.append(smallMilk_indicatorClone);
                     }
-                    
+
+                    if (residents[k].mug.toLowerCase() == 'y' || residents[k].mug.toLowerCase() == 'yes') {
+                        let Mug_indicatorClone = Mug_indicator.cloneNode(true);
+                        table_person.append(Mug_indicatorClone);
+                    }
                     if (residents[k].appetizer.toLowerCase() == 'v8' || residents[k].appetizer.toLowerCase() == 'no') {
                         let V8_indicatorClone = V8_indicator.cloneNode(true);
                         table_person.append(V8_indicatorClone);
@@ -257,6 +271,10 @@ fetch(FULL_URL)
     smallMilk.innerHTML = (`Small jug of milk: <strong>${smallMilkAmount.length}`);
     smallMilk.prepend(small_milk_indicator)
     
+    attributes.append(Mug);
+    Mug.innerHTML = (`Mugs: <strong>${mugAmount.length}`);
+    Mug.prepend(Mug_indicator)
+
     attributes.append(V8);
     V8.innerHTML = (`V8 juice: <strong>${appetizers.length}`);
     V8.prepend(V8_indicator)

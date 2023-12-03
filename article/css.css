@@ -36,7 +36,11 @@ p{
     margin-bottom: 30px;
 }
 
-p7{
+.sources{
+    text-align: left;
+}
+
+.p7{
     text-align: left;
 }
 

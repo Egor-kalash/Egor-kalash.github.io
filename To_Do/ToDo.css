@@ -1,0 +1,78 @@
+:root{
+  --svg-size: 15px;
+  --drag-dot-size: 3px;
+}
+
+main{
+  width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+.header{
+  text-align: center;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.ToDoList li{
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+  margin: 10px;
+  height: 40px;
+  background-color: rgb(246 241 232);
+  border: none;
+  border-radius: 4px;
+}
+
+.drag{
+  display: grid;
+  width: 20px;
+  height: 40px;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+  grid-template-columns: repeat(2, 5px)
+}
+.dot{
+  width: var(--drag-dot-size);
+  height: var(--drag-dot-size);
+  margin: 1px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+li input{
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 90%;
+  padding: 0;
+  background-color: rgb(246 241 232);
+}
+
+li:hover, li:hover > input{
+  background-color: rgb(228, 226, 224);
+}
+
+input:focus{
+  background-color: inherit;
+}
+
+.delete{
+  height: 15px;
+  width: 15px;
+  padding: 0;
+  background: none;
+  border: none;
+  margin-right: 10px;
+}
+
+
+.delete-svg{
+  height: inherit;
+  width: inherit;
+}

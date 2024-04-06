@@ -23,9 +23,9 @@ ul{
   align-items: center;
   margin: 10px;
   height: 40px;
-  background-color: rgb(246 241 232);
-  border: none;
-  border-radius: 4px;
+  /* background-color: rgb(246 241 232); */
+  border-bottom: 1px solid black;
+  animation: popUp 300ms;
 }
 
 .drag{
@@ -51,7 +51,7 @@ li input{
   height: 40px;
   width: 90%;
   padding: 0;
-  background-color: rgb(246 241 232);
+  background-color: inherit;
 }
 
 li:hover, li:hover > input{
@@ -62,17 +62,53 @@ input:focus{
   background-color: inherit;
 }
 
-.delete{
+.add{
   height: 15px;
   width: 15px;
   padding: 0;
   background: none;
   border: none;
   margin-right: 10px;
+  transform: rotate(45deg);
+}
+
+.add-svg{
+  height: inherit;
+  width: inherit;
+}
+
+.is-done{
+  width: 15px;
+  height: 15px;
+}
+
+.delete{
+  border: none;
+  width: 40px;
+  background: none;
+}
+.delete:hover .lid{
+  rotate: -15deg;
+  transform: translate(-4px, 0px);
+}
+.delete:hover svg{fill:red;}
+
+
+li[data-task-checked="1"] .task{
+  text-decoration: line-through;
+}
+li[data-task-checked="0"]  .task{
+  text-decoration: none;
 }
 
 
-.delete-svg{
-  height: inherit;
-  width: inherit;
+@keyframes popUp {
+  from{
+    height: 20px;
+    width: 40px;
+  }
+  to{
+    height: 40px;
+    width: 100%;
+  }
 }

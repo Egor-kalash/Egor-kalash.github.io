@@ -61,7 +61,7 @@ let checkedTask = (task) => {
   else{li.dataset.taskChecked = 0}
 }
 
-window.addEventListener('DOMSubtreeModified', function addbtn() {;
+window.addEventListener('DOMSubtreeModified', function addbtn() {
   if(toDoList.children.length == 0){
     setTimeout(function(){
       createTask();
@@ -69,4 +69,4 @@ window.addEventListener('DOMSubtreeModified', function addbtn() {;
   } 
 });
 
-console.log(toDoList)
+

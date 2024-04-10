@@ -53,7 +53,6 @@ let deleteTask = (task) => {
    
 
 let checkedTask = (task) => {
-  const input = document.getElementById(`inp_${task}`)
   let li = document.getElementById(`task_${task}`)
   if(li.dataset.taskChecked == 0){
     li.dataset.taskChecked = 1;

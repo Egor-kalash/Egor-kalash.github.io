@@ -19,4 +19,4 @@ const quickSort = (arr) => {
 };
 
 let myArray = [3, 7, 2, 5, 1, 4, 6, 8];
-console.log(quicksort(myArray));
+console.log(quickSort(myArray));

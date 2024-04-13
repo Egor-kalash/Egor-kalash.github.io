@@ -5,8 +5,6 @@ class ToDoValue {
   }
 }
 
-
-
 let task = 0; // Initialize 
 const toDoList = document.querySelector('.ToDoList');
 let toDos = [];

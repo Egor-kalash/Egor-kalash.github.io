@@ -6,9 +6,10 @@ class ToDoValue {
 }
 
 
+
 let task = 0; // Initialize 
 const toDoList = document.querySelector('.ToDoList');
-
+let toDos = [];
 // Function to create a new task
 const createTask = () => {
     task++; // Increment task to ensure unique ID for each task
@@ -42,6 +43,7 @@ const createTask = () => {
     </button>
     `;
     toDoList.appendChild(li);
+    toDos.push(li)
 };
 
 // Initially create the first task

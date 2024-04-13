@@ -1,3 +1,10 @@
+class ToDoValue {
+  constructor(inputIndex, inputValue){
+    this.index = inputIndex;
+    this.value = inputValue;
+  }
+}
+
 
 let task = 0; // Initialize 
 const toDoList = document.querySelector('.ToDoList');
@@ -67,5 +74,3 @@ window.addEventListener('DOMSubtreeModified', function addbtn() {
     }, 500);
   } 
 });
-
-

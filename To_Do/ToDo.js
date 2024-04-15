@@ -1,13 +1,14 @@
 class ToDoValue {
-  constructor(inputIndex, inputValue){
+  constructor(inputIndex, inputValue, inputStatus){
     this.index = inputIndex;
     this.value = inputValue;
+    this.status = inputStatus;
   }
 }
-
+let ToDoValues = []; // Values of the inputs of ToDos {index, value}
 let task = 0; // Initialize 
 const toDoList = document.querySelector('.ToDoList');
-let toDos = [];
+let toDos = []; // arrey of ToDos
 // Function to create a new task
 const createTask = () => {
   if(toDoList.children.length == 0){
@@ -23,7 +24,7 @@ const createTask = () => {
     <svg class="add-svg" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>
   </button>
   <input type="checkbox" onclick="checkedTask(${task})" id="checkbox_${task}" class="is-done" />
-  <input type="text" id="inp_${task}" class="task"/>
+  <input type="text" id="inp_${task}" onchange="collectToDoValue(${task})" class="task"/>
   <button class="delete" onclick="deleteTask(${task})">
     <svg class="bin" fill="#000000" viewBox="-3.6 -3.6 43.20 43.20" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(0)matrix(-1, 0, 0, 1, 0, 0)">
 
@@ -60,7 +61,6 @@ const makeAdd = () => {
 // Define the deleteTask function
 let deleteTask = (task) => {
     const taskItem = document.getElementById(`task_${task}`); 
-    const id = document.getElementById(`task_${task}`).id;
     if (taskItem) {
       taskItem.remove();
       toDos = toDos.filter(item => item !== `task_${task}`);
@@ -69,12 +69,13 @@ let deleteTask = (task) => {
 };
    
 
-let checkedTask = (task) => {
+function checkedTask(task){
   let li = document.getElementById(`task_${task}`)
   if(li.dataset.taskChecked == 0){
     li.dataset.taskChecked = 1;
   }
   else{li.dataset.taskChecked = 0}
+  collectToDoValue(task);
 }
 
 window.addEventListener('DOMSubtreeModified', function addbtn() {
@@ -86,3 +87,19 @@ window.addEventListener('DOMSubtreeModified', function addbtn() {
     }, 500);
   } 
 });
+
+function collectToDoValue(task){
+  ToDoValues = [];
+  let ToDosLength = toDoList.children.length;
+    for (let i = 0; i <= ToDosLength;i++){
+      if (document.getElementById(`inp_${i}`) != null) {
+        const taskValue = document.getElementById(`inp_${i}`).value;
+        const taskStatus = document.getElementById(`task_${i}`).dataset.taskChecked;
+        // if (taskValue !== ''){
+          let newToDoObject = new ToDoValue(i, taskValue, taskStatus);
+          ToDoValues.push(newToDoObject)
+        // }
+      }
+    }
+    console.log(ToDoValues)
+}

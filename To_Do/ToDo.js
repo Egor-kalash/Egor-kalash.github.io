@@ -49,7 +49,7 @@ const createTask = () => {
   toDos.push(li.id)
 };
 
-createTask()
+createTask();
 
 // Initially create the first task
 

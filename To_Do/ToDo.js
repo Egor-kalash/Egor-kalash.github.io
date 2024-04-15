@@ -48,6 +48,8 @@ const createTask = () => {
   toDos.push(li.id)
 };
 
+createTask()
+
 // Initially create the first task
 
 // Define the makeAdd function

@@ -5,7 +5,13 @@ class ToDoValue {
     this.status = inputStatus;
   }
 }
+<<<<<<< Updated upstream
 let ToDoValues = []; // Values of the inputs of ToDos {index, value}
+=======
+
+// console.log(ToDoValue(2, 4))
+
+>>>>>>> Stashed changes
 let task = 0; // Initialize 
 const toDoList = document.querySelector('.ToDoList');
 let toDos = []; // arrey of ToDos
@@ -48,6 +54,7 @@ const createTask = () => {
   toDoList.appendChild(li);
   toDos.push(li.id)
 };
+createTask();
 
 createTask();
 

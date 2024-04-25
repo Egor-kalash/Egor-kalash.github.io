@@ -53,7 +53,7 @@ const createTask = (value) => {
 
 
 // Initially create the first task
-createTask('');
+// createTask('');
 
 // Define the makeAdd function
 const makeAdd = () => {
@@ -81,13 +81,13 @@ function checkedTask(task){
 }
 
 window.addEventListener('DOMSubtreeModified', function addbtn() {
-  if(toDoList.children.length == 0){
-    setTimeout(function(){
+  setTimeout(function(){
+    if(toDoList.children.length === 0){
       toDos = []
       createTask("");
       console.log(toDos)
-    }, 500);
-  } 
+    } 
+  }, 500);
 });
 
 function collectToDoValue(task){

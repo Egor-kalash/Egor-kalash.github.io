@@ -1,3 +1,4 @@
+
 class ToDoValue {
   constructor(inputIndex, inputValue, inputStatus){
     this.index = inputIndex;
@@ -30,7 +31,7 @@ const createTask = () => {
     <svg class="add-svg" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>
   </button>
   <input type="checkbox" onclick="checkedTask(${task})" id="checkbox_${task}" class="is-done" />
-  <input type="text" id="inp_${task}" onchange="collectToDoValue(${task})" class="task"/>
+  <input type="text" id="inp_${task}" onchange="collectToDoValue(${task})" style="width: 0"/> <div contenteditable="plaintext-only" style="width: 90%;  " class="task"></div></input>
   <button class="delete" onclick="deleteTask(${task})">
     <svg class="bin" fill="#000000" viewBox="-3.6 -3.6 43.20 43.20" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(0)matrix(-1, 0, 0, 1, 0, 0)">
 
@@ -54,7 +55,6 @@ const createTask = () => {
   toDoList.appendChild(li);
   toDos.push(li.id)
 };
-createTask();
 
 createTask();
 

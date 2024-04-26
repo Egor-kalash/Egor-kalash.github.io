@@ -61,7 +61,7 @@ const makeAdd = () => {
   console.log(toDos)
 };
 // Define the deleteTask function
-let deleteTask = (task) => {
+const deleteTask = (task) => {
     const taskItem = document.getElementById(`task_${task}`); 
     if (taskItem) {
       taskItem.remove();
@@ -92,24 +92,78 @@ window.addEventListener('DOMSubtreeModified', function addbtn() {
 });
 
 function collectToDoValue(task){
+  const toDoListNew = document.querySelector('.ToDoList');
   ToDoValues = [];
-  let ToDosLength = toDoList.children.length;
-    for (let i = 0; i <= ToDosLength;i++){
-      if (document.getElementById(`inp_${i}`) != null) {
-        const taskValue = document.getElementById(`inp_${i}`).value;
-        const taskStatus = document.getElementById(`task_${i}`).dataset.taskChecked;
+  let ToDosLength = toDoListNew.children.length;
+    for (let i = 0; i < ToDosLength;i++){
+      let toDoTask = toDoListNew.children[i];
+      let taskValue = toDoTask.children[2];
+
+      if (taskValue.value) {
+
         // if (taskValue !== ''){
-          let newToDoObject = new ToDoValue(i, taskValue, taskStatus);
-          ToDoValues.push(newToDoObject)
+          let newToDoObject = new ToDoValue(i, taskValue.value, toDoTask.dataset.taskChecked);
+
+          ToDoValues.push(newToDoObject);
+
         // }
       }
     }
     console.log(ToDoValues)
+    // return ToDoValues;
 }
 
 function addListOfTasks(){
+  const deleteFirstEl = toDoList.children[0].id.slice(5,toDoList.children[0].id.length+1);
   console.log(ToDoValues)
   for(let i =0; i < ToDoValues.length; i++){
     createTask(ToDoValues[i].value);
   }
+  deleteTask(deleteFirstEl);
 };
+
+addListOfTasks();
+// ------------------- API Stuff ------------------- \\
+
+function authenticate() {
+  return gapi.auth2.getAuthInstance()
+      .signIn({scope: "https://www.googleapis.com/auth/spreadsheets"})
+      .then(function() { console.log("Sign-in successful"); },
+            function(err) { console.error("Error signing in", err); });
+}
+
+
+
+function appendToSheet() {
+  var params = {
+      // The ID of the spreadsheet.
+      spreadsheetId: '',
+
+      // The A1 notation of the range to start searching for a logical table of data.
+      range: 'Sheet1',  // No need to specify a specific cell here
+
+      // How the input data should be interpreted.
+      valueInputOption: 'RAW',
+
+      // How the input data should be inserted.
+      insertDataOption: 'INSERT_ROWS',
+  };
+
+  var valueRangeBody = {
+      "values": [
+          ["Item", "Cost", "Stocked", "Ship Date"],
+          ["Wheel", "$20.50", "4", "3/1/2016"],
+          ["Door", "$15", "2", "3/15/2016"],
+          ["Engine", "$100", "1", "30/20/2016"],
+      ],
+  };
+
+  var request = gapi.client.sheets.spreadsheets.values.append(params, valueRangeBody);
+  request.then(function(response) {
+      // Handle response here.
+      console.log(response.result);
+  },
+  function(reason) {
+      console.error('error: ' + reason.result.error.message);
+  });
+}

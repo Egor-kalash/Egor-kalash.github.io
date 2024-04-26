@@ -6,7 +6,7 @@ class ToDoValue {
     this.status = inputStatus;
   }
 }
-
+let ServerToDoValues = [] // add server upload.
 let ToDoValues = []; // Values of the inputs of ToDos {index, value}
 let task = 0; // Initialize 
 const toDoList = document.querySelector('.ToDoList');
@@ -68,6 +68,7 @@ let deleteTask = (task) => {
       toDos = toDos.filter(item => item !== `task_${task}`);
       console.log(toDos)
     }
+    collectToDoValue(task)
 };
    
 
@@ -105,3 +106,10 @@ function collectToDoValue(task){
     }
     console.log(ToDoValues)
 }
+
+function addListOfTasks(){
+  console.log(ToDoValues)
+  for(let i =0; i < ToDoValues.length; i++){
+    createTask(ToDoValues[i].value);
+  }
+};

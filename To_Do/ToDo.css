@@ -17,6 +17,19 @@ ul{
   list-style-type: none;
 }
 
+#load_circle{
+  position: absolute;
+  display: block;
+  height: 40px;
+  width: 40px;
+  top: 20%;
+  left: calc(50% - 20px);
+  border: 2px solid black;
+  border-radius: 50px;
+  border-top: white 2px solid;
+  animation: load 1s infinite cubic-bezier(0.48, 0.47, 0.44, 0.44)
+}
+
 .ToDoList li{
   display: flex;
   justify-content:space-evenly;
@@ -114,5 +127,17 @@ li[data-task-checked="0"]  .task{
   to{
     height: 50px;
     width: 100%;
+  }
+}
+
+@keyframes load {
+  0%{
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100%{
+    transform: rotate(360deg)
   }
 }

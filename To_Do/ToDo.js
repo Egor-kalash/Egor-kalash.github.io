@@ -1,4 +1,3 @@
-
 class ToDoValue {
   constructor(inputIndex, inputValue, inputStatus){
     this.index = inputIndex;
@@ -6,13 +5,21 @@ class ToDoValue {
     this.status = inputStatus;
   }
 }
-let ServerToDoValues = [] // add server upload.
+let ServerToDoValues = []; // add server upload.
 let ToDoValues = []; // Values of the inputs of ToDos {index, value}
 let task = 0; // Initialize 
 const toDoList = document.querySelector('.ToDoList');
+toDoList.style.display = "none";
+const loadCircle = document.getElementById('load_circle');
 let toDos = []; // arrey of ToDos
+const request = 'https://sheets.googleapis.com/v4/spreadsheets/{spreadsheetId}/values/{range}:clear'
 // Function to create a new task
+
+
+
+
 const createTask = (value) => {
+  console.log(value)
   if(toDoList.children.length === 0){
     task = 0;
   }
@@ -21,7 +28,7 @@ const createTask = (value) => {
   li.setAttribute('id', `task_${task}`);
   li.setAttribute('data-task-checked', 0);
   li.innerHTML = `
-  <button onclick="makeAdd()" id="add_${task}" class="add">
+  <button onclick="createTask('')" id="add_${task}" class="add">
   <svg class="add-svg" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>
   </button>
   <input type="checkbox" onclick="checkedTask(${task})" id="checkbox_${task}" class="is-done" />
@@ -50,16 +57,41 @@ const createTask = (value) => {
   toDoList.appendChild(li);
   toDos.push(li.id);
 };
+createTask('')
 
+// ------ Download docs ------ \\
+
+async function initializeGapiClient() {
+  await gapi.client.init({
+    apiKey: API_KEY,
+    discoveryDocs: [DISCOVERY_DOC],
+  });
+  gapiInited = true;
+  addListOfTasks(listTasks())
+  setTimeout(function(){
+    toDoList.style.display = "block"
+    loadCircle.style.display = "none"
+  }, 150)
+  
+  
+}
+
+// ------ Check if no children in ToDoList ------ \\
+
+window.addEventListener('DOMSubtreeModified', function addbtn() {
+  setTimeout(function(){
+    if(toDoList.children.length === 0){
+      toDos = []
+      createTask("");
+      console.log(toDos)
+    } 
+  }, 500);
+});
 
 // Initially create the first task
 // createTask('');
 
-// Define the makeAdd function
-const makeAdd = () => {
-  createTask("");
-  console.log(toDos)
-};
+
 // Define the deleteTask function
 const deleteTask = (task) => {
     const taskItem = document.getElementById(`task_${task}`); 
@@ -81,15 +113,7 @@ function checkedTask(task){
   collectToDoValue(task);
 }
 
-window.addEventListener('DOMSubtreeModified', function addbtn() {
-  setTimeout(function(){
-    if(toDoList.children.length === 0){
-      toDos = []
-      createTask("");
-      console.log(toDos)
-    } 
-  }, 500);
-});
+
 
 function collectToDoValue(task){
   const toDoListNew = document.querySelector('.ToDoList');
@@ -113,57 +137,151 @@ function collectToDoValue(task){
     // return ToDoValues;
 }
 
-function addListOfTasks(){
-  const deleteFirstEl = toDoList.children[0].id.slice(5,toDoList.children[0].id.length+1);
-  console.log(ToDoValues)
-  for(let i =0; i < ToDoValues.length; i++){
-    createTask(ToDoValues[i].value);
+function addListOfTasks(savedToDos){
+  console.log(savedToDos)
+  for(let i = 0; i < savedToDos.length; i++){
+    console.log(savedToDos[i].value)
+    createTask(savedToDos[i].value);
   }
+  const deleteFirstEl = toDoList.children[0].id.slice(5,toDoList.children[0].id.length+1);
   deleteTask(deleteFirstEl);
 };
 
-addListOfTasks();
 // ------------------- API Stuff ------------------- \\
 
-function authenticate() {
-  return gapi.auth2.getAuthInstance()
-      .signIn({scope: "https://www.googleapis.com/auth/spreadsheets"})
-      .then(function() { console.log("Sign-in successful"); },
-            function(err) { console.error("Error signing in", err); });
+/* exported gapiLoaded */
+/* exported gisLoaded */
+/* exported handleAuthClick */
+/* exported handleSignoutClick */
+
+// TODO(developer): Set to client ID and API key from the Developer Console
+const CLIENT_ID = '729029115604-rfmll816imkosfct8riqshe824chmrn9.apps.googleusercontent.com';
+const API_KEY = 'AIzaSyDucddPFs8W1-BEcnDAUJRBY9x1-myZBLI';
+
+// Discovery doc URL for APIs used by the quickstart
+const DISCOVERY_DOC = 'https://sheets.googleapis.com/$discovery/rest?version=v4';
+
+// Authorization scopes required by the API; multiple scopes can be
+// included, separated by spaces.
+const SCOPES = 'https://www.googleapis.com/auth/spreadsheets.file';
+
+let tokenClient;
+let gapiInited = false;
+let gisInited = false;
+
+// document.getElementById('authorize_button').style.visibility = 'hidden';
+// document.getElementById('signout_button').style.visibility = 'hidden';
+
+/**
+ * Callback after api.js is loaded.
+ */
+function gapiLoaded() {
+  gapi.load('client', initializeGapiClient);
 }
 
+/**
+ * Callback after the API client is loaded. Loads the
+ * discovery doc to initialize the API.
+ */
 
 
-function appendToSheet() {
-  var params = {
-      // The ID of the spreadsheet.
-      spreadsheetId: '',
-
-      // The A1 notation of the range to start searching for a logical table of data.
-      range: 'Sheet1',  // No need to specify a specific cell here
-
-      // How the input data should be interpreted.
-      valueInputOption: 'RAW',
-
-      // How the input data should be inserted.
-      insertDataOption: 'INSERT_ROWS',
-  };
-
-  var valueRangeBody = {
-      "values": [
-          ["Item", "Cost", "Stocked", "Ship Date"],
-          ["Wheel", "$20.50", "4", "3/1/2016"],
-          ["Door", "$15", "2", "3/15/2016"],
-          ["Engine", "$100", "1", "30/20/2016"],
-      ],
-  };
-
-  var request = gapi.client.sheets.spreadsheets.values.append(params, valueRangeBody);
-  request.then(function(response) {
-      // Handle response here.
-      console.log(response.result);
-  },
-  function(reason) {
-      console.error('error: ' + reason.result.error.message);
+/**
+ * Callback after Google Identity Services are loaded.
+ */
+function gisLoaded() {
+  tokenClient = google.accounts.oauth2.initTokenClient({
+    client_id: CLIENT_ID,
+    scope: SCOPES,
+    callback: '', // defined later
   });
+  gisInited = true;
 }
+
+/**
+ * Enables user interaction after all libraries are loaded.
+ */
+function maybeEnableButtons() {
+  if (gapiInited && gisInited) {
+    // document.getElementById('authorize_button').style.visibility = 'visible';
+  }
+}
+
+/**
+ *  Sign in the user upon button click.
+ */
+function handleAuthClick() {
+  tokenClient.callback = async (resp) => {
+    if (resp.error !== undefined) {
+      throw (resp);
+    }
+    await listTasks();
+  };
+
+  if (gapi.client.getToken() === null) {
+    // Prompt the user to select a Google Account and ask for consent to share their data
+    // when establishing a new session.
+    tokenClient.requestAccessToken({prompt: 'consent'});
+  } else {
+    // Skip display of account chooser and consent dialog for an existing session.
+    tokenClient.requestAccessToken({prompt: ''});
+  }
+}
+
+/**
+ *  Sign out the user upon button click.
+ */
+function handleSignoutClick() {
+  const token = gapi.client.getToken();
+  if (token !== null) {
+    google.accounts.oauth2.revoke(token.access_token);
+    gapi.client.setToken('');
+    document.getElementById('content').innerText = '';
+    document.getElementById('authorize_button').innerText = 'Authorize';
+    document.getElementById('signout_button').style.visibility = 'hidden';
+  }
+}
+
+/**
+ * Print the names and majors of students in a sample spreadsheet:
+ * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
+ */
+async function listTasks() {
+  let response;
+  try {
+    // Fetch first 10 files
+    response = await gapi.client.sheets.spreadsheets.values.get({
+      spreadsheetId: '1a3KCmXKnDxqsdwZUPVJ8JkuoKOfEBMLNXCmQvutKdBE',
+      range: 'A2:C1000',
+    });
+  } catch (err) {
+    console.log(err.message);
+    return;
+  }
+  const range = response.result;
+  if (!range || !range.values || range.values.length == 0) {
+    document.getElementById('content').innerText = 'No values found.';
+    return;
+  }
+  // Flatten to string to display
+  const received = range.values;
+  const output = makeToDo(received);
+
+  //.reduce(
+    //  (index, value, status) => `${index}${value[0]}, ${status[0]}\n`,
+      //'Name, Major:\n');
+  console.log(received);
+  console.log(output);
+  addListOfTasks(output)
+  // return output;
+}
+
+function makeToDo(received){
+  const savedToDos = [] 
+  for (let i = 0; i < received.length; i++){
+    let newToDo = new ToDoValue(received[i][0],received[i][1],received[i][2])
+    savedToDos.push(newToDo);
+  }
+  return savedToDos;
+}
+
+

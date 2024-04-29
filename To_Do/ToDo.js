@@ -5,8 +5,7 @@ class ToDoValue {
     this.status = inputStatus;
   }
 }
-let ServerToDoValues = []; // add server upload.
-let ToDoValues = []; // Values of the inputs of ToDos {index, value}
+let ToDoValues = []; // Values of the inputs of ToDos, ready to send to the server
 let task = 0; // Initialize 
 const toDoList = document.querySelector('.ToDoList');
 toDoList.style.display = "none";
@@ -18,7 +17,7 @@ const request = 'https://sheets.googleapis.com/v4/spreadsheets/{spreadsheetId}/v
 
 
 
-const createTask = (value) => {
+const createTask = (value, checked) => {
   console.log(value)
   if(toDoList.children.length === 0){
     task = 0;
@@ -26,9 +25,9 @@ const createTask = (value) => {
   else{task++;}
   const li = document.createElement('li');
   li.setAttribute('id', `task_${task}`);
-  li.setAttribute('data-task-checked', 0);
+  li.setAttribute('data-task-checked', checked);
   li.innerHTML = `
-  <button onclick="createTask('')" id="add_${task}" class="add">
+  <button onclick="createTask('', 'false')" id="add_${task}" class="add">
   <svg class="add-svg" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>
   </button>
   <input type="checkbox" onclick="checkedTask(${task})" id="checkbox_${task}" class="is-done" />
@@ -57,7 +56,7 @@ const createTask = (value) => {
   toDoList.appendChild(li);
   toDos.push(li.id);
 };
-createTask('')
+createTask('', "false")
 
 // ------ Download docs ------ \\
 
@@ -82,7 +81,7 @@ window.addEventListener('DOMSubtreeModified', function addbtn() {
   setTimeout(function(){
     if(toDoList.children.length === 0){
       toDos = []
-      createTask("");
+      createTask('', 'false');
       console.log(toDos)
     } 
   }, 500);
@@ -106,42 +105,40 @@ const deleteTask = (task) => {
 
 function checkedTask(task){
   let li = document.getElementById(`task_${task}`)
-  if(li.dataset.taskChecked == 0){
-    li.dataset.taskChecked = 1;
+  if(li.dataset.taskChecked == 'false'){
+    li.dataset.taskChecked = 'true';
   }
-  else{li.dataset.taskChecked = 0}
+  else{li.dataset.taskChecked = 'false'}
   collectToDoValue(task);
 }
 
 
-
+// 
 function collectToDoValue(task){
   const toDoListNew = document.querySelector('.ToDoList');
   ToDoValues = [];
   let ToDosLength = toDoListNew.children.length;
-    for (let i = 0; i < ToDosLength;i++){
+  for (let i = 0; i < ToDosLength;i++){
       let toDoTask = toDoListNew.children[i];
       let taskValue = toDoTask.children[2];
-
-      if (taskValue.value) {
-
-        // if (taskValue !== ''){
-          let newToDoObject = new ToDoValue(i, taskValue.value, toDoTask.dataset.taskChecked);
-
-          ToDoValues.push(newToDoObject);
-
-        // }
+      let index = i + 1
+      if (taskValue.value){
+          let taskArray = [];
+          taskArray.push(index, taskValue.value, toDoTask.dataset.taskChecked)
+          ToDoValues.push(taskArray);
       }
     }
     console.log(ToDoValues)
-    // return ToDoValues;
 }
 
 function addListOfTasks(savedToDos){
   console.log(savedToDos)
   for(let i = 0; i < savedToDos.length; i++){
-    console.log(savedToDos[i].value)
-    createTask(savedToDos[i].value);
+    createTask(savedToDos[i].value, savedToDos[i].status);
+    // Check if the task is Checked
+    if(savedToDos[i].status == "true"){
+      document.getElementById(`checkbox_${savedToDos[i].index}`).checked = true;
+    }
   }
   const deleteFirstEl = toDoList.children[0].id.slice(5,toDoList.children[0].id.length+1);
   deleteTask(deleteFirstEl);
@@ -180,12 +177,6 @@ function gapiLoaded() {
 }
 
 /**
- * Callback after the API client is loaded. Loads the
- * discovery doc to initialize the API.
- */
-
-
-/**
  * Callback after Google Identity Services are loaded.
  */
 function gisLoaded() {
@@ -195,50 +186,6 @@ function gisLoaded() {
     callback: '', // defined later
   });
   gisInited = true;
-}
-
-/**
- * Enables user interaction after all libraries are loaded.
- */
-function maybeEnableButtons() {
-  if (gapiInited && gisInited) {
-    // document.getElementById('authorize_button').style.visibility = 'visible';
-  }
-}
-
-/**
- *  Sign in the user upon button click.
- */
-function handleAuthClick() {
-  tokenClient.callback = async (resp) => {
-    if (resp.error !== undefined) {
-      throw (resp);
-    }
-    await listTasks();
-  };
-
-  if (gapi.client.getToken() === null) {
-    // Prompt the user to select a Google Account and ask for consent to share their data
-    // when establishing a new session.
-    tokenClient.requestAccessToken({prompt: 'consent'});
-  } else {
-    // Skip display of account chooser and consent dialog for an existing session.
-    tokenClient.requestAccessToken({prompt: ''});
-  }
-}
-
-/**
- *  Sign out the user upon button click.
- */
-function handleSignoutClick() {
-  const token = gapi.client.getToken();
-  if (token !== null) {
-    google.accounts.oauth2.revoke(token.access_token);
-    gapi.client.setToken('');
-    document.getElementById('content').innerText = '';
-    document.getElementById('authorize_button').innerText = 'Authorize';
-    document.getElementById('signout_button').style.visibility = 'hidden';
-  }
 }
 
 /**
@@ -266,22 +213,17 @@ async function listTasks() {
   const received = range.values;
   const output = makeToDo(received);
 
-  //.reduce(
-    //  (index, value, status) => `${index}${value[0]}, ${status[0]}\n`,
-      //'Name, Major:\n');
+
   console.log(received);
   console.log(output);
   addListOfTasks(output)
-  // return output;
 }
 
 function makeToDo(received){
   const savedToDos = [] 
   for (let i = 0; i < received.length; i++){
-    let newToDo = new ToDoValue(received[i][0],received[i][1],received[i][2])
+    let newToDo = new ToDoValue(received[i][0],received[i][1],received[i][2].toLowerCase())
     savedToDos.push(newToDo);
   }
   return savedToDos;
 }
-
-

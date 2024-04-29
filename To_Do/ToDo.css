@@ -111,10 +111,10 @@ input:focus{
 .delete:hover svg{fill:red;}
 
 
-li[data-task-checked="1"] .task{
+li[data-task-checked="true"] .task{
   text-decoration: line-through;
 }
-li[data-task-checked="0"]  .task{
+li[data-task-checked="false"]  .task{
   text-decoration: none;
 }
 

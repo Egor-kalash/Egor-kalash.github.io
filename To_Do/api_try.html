@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="ToDo.css">
+  <title>To-Do List</title>
+</head>
+<body>
+  <p>Sheets API Quickstart</p>
+  <button id="auth-button" style="display: none;">Authorize</button>
+  <button id="update-sheet-button" style="display: none;">Update Sheet</button>
+  <pre id="content" style="white-space: pre-wrap;"></pre>
+
+  <script type="module">
+    import { loadAuth } from './api_try.js';
+
+    window.onload = () => {
+      loadAuth();
+    };
+  </script>
+  <script async defer src="https://apis.google.com/js/api.js"></script>
+</body>
+</html>

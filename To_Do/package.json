@@ -1,0 +1,13 @@
+{
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "description": "Your project description",
+  "main": "api_try.js",
+  "type": "module",
+  "scripts": {
+    "start": "node api_try.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {}
+}

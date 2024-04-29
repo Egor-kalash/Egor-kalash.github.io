@@ -1,0 +1,16 @@
+{
+  "name": "egor-kalash.github.io",
+  "version": "1.0.0",
+  "description": "cписок работ:",
+  "main": "Tables.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "google-auth-library": "^9.9.0",
+    "googleapis": "^135.0.0"
+  }
+}

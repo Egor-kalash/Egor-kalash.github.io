@@ -10,11 +10,13 @@
 <body>
   <main>
     <h1 class="header">To-Do list</h1>
+    <div id="load_circle"></div>
     <ul class="ToDoList">
       
     </ul>
   </main>
   <script  src="./ToDo.js"></script>
-  <script src="./ToDo.jsx"></script>
+  <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+  <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
 </body>
 </html>

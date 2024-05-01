@@ -6,14 +6,16 @@ class ToDoValue {
   }
 }
 let ToDoValues = []; // Values of the inputs of ToDos, ready to send to the server
-let task = 0; // Initialize 
 const toDoList = document.querySelector('.ToDoList');
-toDoList.style.display = "none";
 const loadCircle = document.getElementById('load_circle');
+const subBtn = document.getElementById("submitBtn");
+let task = 0; // Initialize 
 let toDos = []; // arrey of ToDos
 const request = 'https://sheets.googleapis.com/v4/spreadsheets/{spreadsheetId}/values/{range}:clear'
 // Function to create a new task
 
+
+toDoList.style.display = "none";
 
 
 

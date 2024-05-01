@@ -17,6 +17,16 @@ ul{
   list-style-type: none;
 }
 
+button{
+  height: 34px;
+  font-weight: bold;
+  font-size: 13px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  color: rgb(41, 40, 39);
+}
+
 #load_circle{
   position: absolute;
   display: block;

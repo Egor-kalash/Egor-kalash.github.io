@@ -123,9 +123,8 @@ function collectToDoValue(task){
       let taskValue = toDoTask.children[2];
       let index = i + 1
       if (taskValue.value){
-          let taskArray = [];
-          taskArray.push(index, taskValue.value, toDoTask.dataset.taskChecked)
-          ToDoValues.push(taskArray);
+          let ToDo = new ToDoValue(index, taskValue.value, toDoTask.dataset.taskChecked)
+          ToDoValues.push(ToDo);
       }
     }
     console.log(ToDoValues)
@@ -227,3 +226,25 @@ function makeToDo(received){
   }
   return savedToDos;
 }
+
+// -------- Sending to the Google Sheet -------- \\
+
+document.addEventListener('DOMContentLoaded', function() {
+  const submitButton = document.getElementById('submitToDos');
+  submitButton.addEventListener('click', function() {
+
+          fetch("https://script.google.com/macros/s/AKfycbxkVkEVhd-V3hgz0Zord1RWnN2atmOcLNvlN6M70gyzKg7OEnCQgCFcw0fodxZxlqcbjQ/exec", {
+              method: "POST",
+              body: JSON.stringify({ data: ToDoValues }) // Ensure your server-side script is prepared to parse JSON
+          })
+          .then(response => response.text())
+          .then(data => {
+              console.log('Success:', data);
+              alert('To-Dos successfully submitted!');
+          })
+          .catch(error => {
+              console.error('Error:', error);
+              alert('Failed to submit To-Dos. Please try again.');
+          });
+      });
+});

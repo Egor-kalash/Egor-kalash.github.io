@@ -1,20 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
 :root{
   --svg-size: 15px;
   --drag-dot-size: 3px;
 }
 
 main{
+  font-family: "Cairo", sans-serif;
   width: 500px;
   margin: auto;
   text-align: center;
 }
 
 .header{
+  font-weight: 800;
   text-align: center;
 }
 
 ul{
   list-style-type: none;
+}
+button:hover{
+  cursor: pointer;
+}
+
+button:active{
+  background-color: #000;
+  color: #fff;
 }
 
 button{

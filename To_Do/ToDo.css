@@ -7,7 +7,8 @@
 
 main{
   font-family: "Cairo", sans-serif;
-  width: 500px;
+  min-width: 380px;
+  max-width: 500px;
   margin: auto;
   text-align: center;
 }
@@ -20,17 +21,17 @@ main{
 ul{
   list-style-type: none;
 }
-button:hover{
+#submitToDos:hover{
   cursor: pointer;
   animation: BtnHover 500ms ease;
 }
 
-button:active{
+#submitToDos:active{
   background-color: #000;
   color: #fff;
 }
 
-button{
+#submitToDos{
   height: 34px;
   width: 92px;
   font-weight: bold;
@@ -168,12 +169,12 @@ li[data-task-checked="false"]  .task{
 
 @keyframes BtnHover {
   0%{
-    width: 78px;
+    width: 92px;
   }
   50%{
-    width: 90px;
+    width: 102px;
   }
   100%{
-    width: 78px;
+    width: 92px;
   }
 }

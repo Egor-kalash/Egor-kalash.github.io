@@ -9,6 +9,7 @@ let ToDoValues = []; // Values of the inputs of ToDos, ready to send to the serv
 const toDoList = document.querySelector('.ToDoList');
 const loadCircle = document.getElementById('load_circle');
 const subBtn = document.getElementById("submitToDos");
+const savePls = document.querySelector(".saved");
 let task = 0; // Initialize 
 let toDos = []; // arrey of ToDos
 const request = 'https://sheets.googleapis.com/v4/spreadsheets/{spreadsheetId}/values/{range}:clear'
@@ -17,8 +18,20 @@ const request = 'https://sheets.googleapis.com/v4/spreadsheets/{spreadsheetId}/v
 
 toDoList.style.display = "none";
 
+function ToDosSaved(){
+  savePls.style.backgroundColor = "green";
+  savePls.style.animation = "saved 500ms ease";
+  savePls.children[0].innerHTML = "To-Dos saved!";
+};
+
+function ToDosNotSaved(){
+  savePls.style.backgroundColor = "red";
+  savePls.style.animation = "save_to_dos infinite 5s ease-in";
+  savePls.children[0].innerHTML = "To-Dos're not saved";
+};
 
 const createTask = (value, checked) => {
+  ToDosNotSaved(); 
   console.log(value)
   if(toDoList.children.length === 0){
     task = 0;
@@ -69,6 +82,7 @@ async function initializeGapiClient() {
   gapiInited = true;
   listTasks()
   // MB add later if the problem still occures
+
   // if(toDoList.length === listTasks().length){
   //   console.log("fucked up, sry boss, lemme try again")
   //   addListOfTasks(listTasks())
@@ -84,6 +98,7 @@ async function initializeGapiClient() {
 // ------ Check if no children in ToDoList ------ \\
 
 window.addEventListener('DOMSubtreeModified', function addbtn() {
+  // ToDosNotSaved();
   setTimeout(function(){
     if(toDoList.children.length === 0){
       toDos = []
@@ -93,12 +108,17 @@ window.addEventListener('DOMSubtreeModified', function addbtn() {
   }, 500);
 });
 
+document.addEventListener('input', function (){
+    ToDosNotSaved();  
+});
+
 // Initially create the first task
 // createTask('');
 
-
+// ------ front-end work ------ \\
 // Define the deleteTask function
 const deleteTask = (task) => {
+    ToDosNotSaved(); 
     const taskItem = document.getElementById(`task_${task}`); 
     if (taskItem) {
       taskItem.remove();
@@ -148,6 +168,13 @@ function addListOfTasks(savedToDos){
   const deleteFirstEl = toDoList.children[0].id.slice(5,toDoList.children[0].id.length+1);
   deleteTask(deleteFirstEl);
 };
+
+
+
+
+
+
+
 
 // ------------------- API Stuff ------------------- \\
 
@@ -242,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function() {
           .then(response => response.text())
           .then(data => {
               console.log('Success:', data);
-              alert('To-Dos successfully submitted!');
+              ToDosSaved();
           })
           .catch(error => {
               console.error('Error:', error);
@@ -250,3 +277,5 @@ document.addEventListener('DOMContentLoaded', function() {
           });
       });
 });
+
+// Simplify the functions

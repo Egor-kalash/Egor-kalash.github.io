@@ -40,7 +40,7 @@ ul{
 
 #submitToDos{
   height: 34px;
-  width: 96px;
+  width: 100px;
   font-weight: bold;
   font-size: 13px;
   border: 1px solid black;
@@ -210,7 +210,7 @@ li[data-task-checked="false"]  .task{
 
 @keyframes BtnHover {
   50%{
-    width: 106px;
+    width: 110px;
   }
 }
 

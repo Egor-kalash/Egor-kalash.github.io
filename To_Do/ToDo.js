@@ -8,7 +8,7 @@ class ToDoValue {
 let ToDoValues = []; // Values of the inputs of ToDos, ready to send to the server
 const toDoList = document.querySelector('.ToDoList');
 const loadCircle = document.getElementById('load_circle');
-const subBtn = document.getElementById("submitBtn");
+const subBtn = document.getElementById("submitToDos");
 let task = 0; // Initialize 
 let toDos = []; // arrey of ToDos
 const request = 'https://sheets.googleapis.com/v4/spreadsheets/{spreadsheetId}/values/{range}:clear'

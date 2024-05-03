@@ -22,7 +22,7 @@ ul{
 }
 button:hover{
   cursor: pointer;
-  
+  animation: BtnHover 500ms ease;
 }
 
 button:active{
@@ -32,6 +32,7 @@ button:active{
 
 button{
   height: 34px;
+  width: 92px;
   font-weight: bold;
   font-size: 13px;
   border: 1px solid black;
@@ -50,7 +51,7 @@ button{
   border: 2px solid black;
   border-radius: 50px;
   border-top: white 2px solid;
-  animation: load 1s infinite cubic-bezier(0.48, 0.47, 0.44, 0.44)
+  animation: load 1s infinite cubic-bezier(0.48, 0.47, 0.44, 0.44);
 }
 
 .ToDoList li{
@@ -162,5 +163,17 @@ li[data-task-checked="false"]  .task{
   }
   100%{
     transform: rotate(360deg)
+  }
+}
+
+@keyframes BtnHover {
+  0%{
+    width: 78px;
+  }
+  50%{
+    width: 90px;
+  }
+  100%{
+    width: 78px;
   }
 }

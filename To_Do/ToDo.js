@@ -18,7 +18,6 @@ const request = 'https://sheets.googleapis.com/v4/spreadsheets/{spreadsheetId}/v
 toDoList.style.display = "none";
 
 
-
 const createTask = (value, checked) => {
   console.log(value)
   if(toDoList.children.length === 0){
@@ -68,7 +67,12 @@ async function initializeGapiClient() {
     discoveryDocs: [DISCOVERY_DOC],
   });
   gapiInited = true;
-  addListOfTasks(listTasks())
+  listTasks()
+  // MB add later if the problem still occures
+  // if(toDoList.length === listTasks().length){
+  //   console.log("fucked up, sry boss, lemme try again")
+  //   addListOfTasks(listTasks())
+  // }
   setTimeout(function(){
     toDoList.style.display = "block"
     loadCircle.style.display = "none"
@@ -189,10 +193,7 @@ function gisLoaded() {
   gisInited = true;
 }
 
-/**
- * Print the names and majors of students in a sample spreadsheet:
- * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
- */
+// when called is used to collect the to-dos from GS and place them into positions on the fron-end
 async function listTasks() {
   let response;
   try {
@@ -214,10 +215,9 @@ async function listTasks() {
   const received = range.values;
   const output = makeToDo(received);
 
-
-  console.log(received);
   console.log(output);
-  addListOfTasks(output)
+  // calls the function that adds to-dos to the front-end
+  addListOfTasks(output);
 }
 
 function makeToDo(received){

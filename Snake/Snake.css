@@ -1,13 +1,12 @@
-:root{
-  --box-original-size: 25px;
-}
-
-
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=VT323&display=swap');
 
 body{
   text-align: center;
-  font-family: "Ubuntu Sans Mono", monospace;
-  font-weight: 700;
+  font-family: "DotGothic16", sans-serif;
   font-style: normal;
+  font-weight: 900;
+}
+
+h1{
+  font-size: 45px;
 }

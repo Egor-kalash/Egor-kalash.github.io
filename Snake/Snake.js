@@ -88,6 +88,7 @@ function update() {
   }
   context.fillStyle = "#000";
   context.fillRect(0, 0, board.width, board.height);
+  
   // render food
   context.fillStyle = "rgb(241, 10, 10)";
   context.fillRect(foodX, foodY, blockSize, blockSize);
@@ -97,15 +98,15 @@ function update() {
     snakeBody.push([foodX, foodY])
     scoreBoard.innerHTML = snakeBody.length;
     eat.play()
-  };
+  }
 
-   for(let i = snakeBody.length - 1; i > 0; i--){
-     snakeBody[i] = snakeBody[i-1];
-   };
- 
-   if(snakeBody.length){
-     snakeBody[0] = [snakeX, snakeY];
-   }
+  for(let i = snakeBody.length - 1; i > 0; i--){
+    snakeBody[i] = snakeBody[i-1];
+  }
+
+  if(snakeBody.length){
+    snakeBody[0] = [snakeX, snakeY];
+  }
 
    // render snake
   context.fillStyle = "rgb(60, 255, 0)";

@@ -1,0 +1,13 @@
+{
+  "name": "follow_me",
+  "version": "1.0.0",
+  "description": "A sample TypeScript project",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node index.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0"
+  }
+}

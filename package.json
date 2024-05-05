@@ -10,8 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/template": "^7.24.0",
+    "@babel/traverse": "^7.24.5",
     "google-auth-library": "^9.9.0",
     "googleapis": "^135.0.0",
-    "react-scripts": "^3.0.1"
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/babel__template": "^7.4.4",
+    "@types/babel__traverse": "^7.20.5",
+    "typescript": "^5.4.5"
   }
 }

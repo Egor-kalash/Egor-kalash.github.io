@@ -1,0 +1,7 @@
+/* Make a nicer decoration when hovered */
+.nav-link:hover,
+.account:hover{
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+}

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="George K">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./CSS/main.css">
+  <link rel="font" href="./cour.ttf">
+  <link rel="font" href="./AmazeNormal.ttf">
+  <link rel="icon" href="./pictures/logo.png">
+  <title>The Voices</title>
+</head>
+<body>
+  <header>
+    <div class="upper_header" id="header">
+        <div class="left_content">
+            <nav>
+                <div class="nav-link"><a href="">submit an article</a></div>
+                <!-- Additional links can be added here -->
+            </nav>
+        </div>
+        <a href="#" class="logo"><i>Voices</i></a>
+        <div class="right_content">
+            <div class="account" style="margin-right: 3vw;">Account</div>
+            <!-- Account-related content -->
+        </div>
+    </div>
+          <!-- Lower header content -->            
+    <div class="lower_header">
+      <div class="burger" id="burger" onClick="Pressed()">
+          <div class="line" id="line1"></div>
+          <div class="line" id="line2"></div>
+          <div class="line" id="line3"></div>
+      </div>
+      <div class="readers">Readers:<div id="readers">1503</div> </div>
+      <div class="lookup">
+          <div class="magnifing_glass">
+              <div class="glass"></div>
+              <div class="stick"></div>
+          </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="topic_slider">
+        <ul>
+            <li><a href="./props.html"><span class="topic">World</span></a></li>
+            <li><a href="#"><span class="topic">Sports</span></a></li>
+            <li><a href="#"><span class="topic">Health</span></a></li>
+            <li><a href="#"><span class="topic">Business</span></a></li>
+            <li><a href="#"><span class="topic">Programing</span></a></li>
+            <li><a href="#"><span class="topic">Engineering</span></a></li>
+            <li><a href="#"><span class="topic">Technology</span></a></li>
+            <li><a href="#"><span class="topic">Politics</span></a></li>
+            <li><a href="#"><span class="topic">Writing</span></a></li>
+            <li><a href="#"><span class="topic">History</span></a></li>
+        </ul>
+    </div>
+    <div class="container_front front_page">
+
+        <div class="article-crad">
+            <div class="card-header" id="cardHolder1" data-clicked-on-card="false"> 
+                <div class="card-data">
+                    <div class="author_account_circle"><img src="./pictures/author-test.jpeg"></div>
+                    <div class="card-who-when">
+                        <div class="author-name">Molly McKeever</div>
+                        <div class="date_posted">Mar. 01 2024</div>
+                    </div>
+                </div>
+                <button onclick="Liked(this)" data-cardholder-id="cardHolder1" class="btn-style btn-theme" id="btn0" type="button" title="Like this image">
+                    <svg class="icon-style" width="24" height="24" viewBox="0 0 24 24" version="1.1" aria-hidden="false">
+                        <desc lang="en-US">A heart</desc>
+                        <path d="M21.424 4.594c-2.101-2.125-5.603-2.125-7.804 0l-1.601 1.619-1.601-1.62c-2.101-2.124-5.603-2.124-7.804 0-2.202 2.126-2.102 5.668 0 7.894L12.019 22l9.405-9.513a5.73 5.73 0 0 0 0-7.893Z"></path>
+                    </svg>
+                </button>
+            </div>
+            <a href="#" class="card-link">
+            <img src="https://images.unsplash.com/photo-1585324698082-2d65db516d5a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEwfEUtLV9wbklpckc0fHxlbnwwfHx8fHw%3D">
+            <div class="card-title">Title</div>
+            <div class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum minima maiores delectus fuga, commodi adipisci ipsa aspernatur placeat autem, animi alias earum dignissimos quod! Voluptas deserunt unde ut dignissimos molestias. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga officia debitis cupiditate. Earum non iste nam placeat odit corporis, consequuntur assumenda nihil tempora iusto soluta veritatis illo error laboriosam ullam!</div>
+            <div class="card-shadow"></div></a>
+        </div>
+        <div class="taday-new">
+            <h1 class="front_title">Today's Voices</h1>
+            <div class="container_front_new">
+                <a href="https://egor-kalash.github.io/article/the_steel_cockroach.html">
+                    <div class="most_promisiong tile">
+                    <div class="picture-size">
+                        <div class="picture" style="background-image: url(./pictures/stalinfeature.jpg);"></div>
+                    </div>
+                    <div class="title-major title">The Steal Cockroach</div>
+                    <div class="article_promo-major article_promo">From the ashes to the sun, these words can frankly describe the rapid growth of the Soviet state in-between the 20s and 30s of the XX century. But can it though?</div>
+                    <a href="#"><div class="read_more" >Read More</div></a>
+                    </div>
+                </a>
+                <div class="little_first_row">
+                        <a href="https://dev.to/unclebigbay/how-to-add-horizontal-lines-before-and-after-a-text-in-html-5e6h">
+                            <div class="tile" >
+                                <div class="picture-size small">
+                                    <div class="picture" style="background-image: url(./pictures/00dc-scotus-abort-qzlt-threeByTwoMediumAt2X.webp);"></div>
+                                </div>
+                                <div class="title">Title</div>
+                                <div class="article_promo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut labore eos nesciunt reprehenderit quae incidunt illum animi maiores, at ipsa cumque quod, eveniet repellendus adipisci, cupiditate dolorum similique doloremque optio.</div>
+                                <div class="topic_and_ttr picture_topic_and_ttr">
+                                    <a href="#1"><div class="article_topic history">History</div></a>
+                                    <a href="#4"><div class="time_to_read">10 min read</div></a>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://dev.to/unclebigbay/how-to-add-horizontal-lines-before-and-after-a-text-in-html-5e6h">
+                            <div class="tile">
+                                <div class="picture-size small">
+                                    <div class="picture" style="background-image: url(./pictures/05HP-Trump-SCOTUS-SUB-zqcm-threeByTwoMediumAt2X.webp);"></div>
+                                </div>
+                                <div class="title">Title</div>
+                                <div class="article_promo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus officia itaque eos numquam quibusdam vel voluptas hic ea debitis soluta ab, aspernatur, sit nihil. Mollitia, porro? Sit nesciunt minus numquam?</div>
+                                <div class="topic_and_ttr picture_topic_and_ttr">
+                                    <a href="#1"><div class="article_topic history">History</div></a>
+                                    <a href="#4"><div class="time_to_read">10 min read</div></a>
+                                    <div class="article_promo_author picture_article_promo_author"><a href="#"><a href="#"><div class="author">Molly McKeever</div></a></div>
+
+                                </div>
+                            </div>
+                        </a>
+                </div>
+            </div>
+        <div class="topics">
+            <h1 class="front_title">~For You~</h1>
+            <div class="articles">
+                <div class="little_first_row no_pics">
+                        <div class="tile tile_small">
+                            <div class="article_promo_author"><a href="#"><div class="author_account_circle"><div class="picture" style="background-image: url(./pictures/author-test.jpeg);"></div></div></a><a href="#"><div class="author">Molly McKeever</div></a><a href="#"><div class="date">Jan. 21 2023</div></a></div>
+                            <a href="#6">
+                                <div class="title">The line of the death</div>
+                                <div class="article_promo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis doloremque pariatur nobis, voluptates mollitia voluptate earum assumenda, necessitatibus fugiat amet magnam recusandae ipsa dolorum veritatis quo, error consectetur expedita quam.</div>
+                            </a>
+                            <div class="article_promo_bottom">
+                                <div class="topic_and_ttr">
+                                    <a href="#1"><div class="article_topic politics" id="topic">Politics</div></a>
+                                    <a href="#4"><div class="time_to_read">10 min read</div></a>
+                                </div>
+                                <div class="interactions"><a></a></div>
+                            </div>
+                        </div>
+                        <div class="tile tile_small">
+                            <div class="article_promo_author"><a href="#"><div class="author_account_circle"><div class="picture" style="background-image: url(./pictures/author-test.jpeg);"></div></div></a><a href="#"><div class="author">Molly McKeever</div></a><a href="#"><div class="date">Jan. 21 2023</div></a></div>
+                            <a href="#6">
+                                <div class="title">The line of the death</div>
+                                <div class="article_promo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis doloremque pariatur nobis, voluptates mollitia voluptate earum assumenda, necessitatibus fugiat amet magnam recusandae ipsa dolorum veritatis quo, error consectetur expedita quam.</div>
+                            </a>
+                            <div class="article_promo_bottom">
+                                <div class="topic_and_ttr">
+                                    <a href="#1"><div class="article_topic programing">Programing</div></a>
+                                    <a href="#4"><div class="time_to_read">10 min read</div></a>
+                                </div>
+                                <div class="interactions"><a></a></div>
+                            </div>
+                        </div>
+                        <div class="tile tile_small">
+                            <div class="article_promo_author"><a href="#"><div class="author_account_circle"><div class="picture" style="background-image: url(./pictures/author-test.jpeg);"></div></div></a><a href="#"><div class="author">Molly McKeever</div></a><a href="#"><div class="date">Jan. 21 2023</div></a></div>
+                            <a href="#6">
+                                <div class="title">The line of the death</div>
+                                <div class="article_promo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis doloremque pariatur nobis, voluptates mollitia voluptate earum assumenda, necessitatibus fugiat amet magnam recusandae ipsa dolorum veritatis quo, error consectetur expedita quam.</div>
+                            </a>
+                            <div class="article_promo_bottom">
+                                <div class="topic_and_ttr">
+                                    <a href="#1"><div class="article_topic engineering">Engineering</div></a>
+                                    <a href="#4"><div class="time_to_read">10 min read</div></a>
+                                </div>
+                                <div class="interactions"><a></a></div>
+                            </div>
+                        </div>
+                        <div class="tile tile_small">
+                            <div class="article_promo_author"><a href="#"><div class="author_account_circle"><div class="picture" style="background-image: url(./pictures/author-test.jpeg);"></div></div></a><a href="#"><div class="author">Molly McKeever</div></a><a href="#"><div class="date">Jan. 21 2023</div></a></div>
+                            <a href="#6">
+                                <div class="title">The line of the death</div>
+                                <div class="article_promo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis doloremque pariatur nobis, voluptates mollitia voluptate earum assumenda, necessitatibus fugiat amet magnam recusandae ipsa dolorum veritatis quo, error consectetur expedita quam.</div>
+                            </a>
+                            <div class="article_promo_bottom">
+                                <div class="topic_and_ttr">
+                                    <a href="#1"><div class="article_topic writing">Writing</div></a>
+                                    <a href="#4"><div class="time_to_read">10 min read</div></a>
+                                </div>
+                                <div class="interactions"><a></a></div>
+                            </div>
+                        </div>
+                        <div class="tile tile_small">
+                            <div class="article_promo_author"><a href="#"><div class="author_account_circle"><div class="picture" style="background-image: url(./pictures/author-test.jpeg);"></div></div></a><a href="#"><div class="author">Molly McKeever</div></a><a href="#"><div class="date">Jan. 21 2023</div></a></div>
+                            <a href="#6">
+                                <div class="title">The line of the death</div>
+                                <div class="article_promo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis doloremque pariatur nobis, voluptates mollitia voluptate earum assumenda, necessitatibus fugiat amet magnam recusandae ipsa dolorum veritatis quo, error consectetur expedita quam.</div>
+                            </a>
+                            <div class="article_promo_bottom">
+                                <div class="topic_and_ttr">
+                                    <a href="#1"><div class="article_topic history">History</div></a>
+                                    <a href="#4"><div class="time_to_read">10 min read</div></a>
+                                </div>
+                                <div class="interactions"><a></a></div>
+                            </div>
+                        </div>
+                        <div class="tile tile_small">
+                            <div class="article_promo_author"><a href="#"><div class="author_account_circle"><div class="picture" style="background-image: url(./pictures/author-test.jpeg);"></div></div></a><a href="#"><div class="author">Molly McKeever</div></a><a href="#"><div class="date">Jan. 21 2023</div></a></div>
+                            <a href="#6">
+                                <div class="title">The line of the death</div>
+                                <div class="article_promo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis doloremque pariatur nobis, voluptates mollitia voluptate earum assumenda, necessitatibus fugiat amet magnam recusandae ipsa dolorum veritatis quo, error consectetur expedita quam.</div>
+                            </a>
+                            <div class="article_promo_bottom">
+                                <div class="topic_and_ttr">
+                                    <a href="#1"><div class="article_topic business">Business</div></a>
+                                    <a href="#4"><div class="time_to_read">10 min read</div></a>
+                                </div>
+                                <div class="interactions"><a></a></div>
+                            </div>
+                        </div>
+                        <div class="tile tile_small">
+                            <div class="article_promo_author"><a href="#"><div class="author_account_circle"><div class="picture" style="background-image: url(./pictures/author-test.jpeg);"></div></div></a><a href="#"><div class="author">Molly McKeever</div></a><a href="#"><div class="date">Jan. 21 2023</div></a></div>
+                            <a href="#6">
+                                <div class="title">The line of the death</div>
+                                <div class="article_promo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis doloremque pariatur nobis, voluptates mollitia voluptate earum assumenda, necessitatibus fugiat amet magnam recusandae ipsa dolorum veritatis quo, error consectetur expedita quam.</div>
+                            </a>
+                            <div class="article_promo_bottom">
+                                <div class="topic_and_ttr">
+                                    <a href="#1"><div class="article_topic health">Health</div></a>
+                                    <a href="#4"><div class="time_to_read">10 min read</div></a>
+                                </div>
+                                <div class="interactions"><a></a></div>
+                            </div>
+                        </div>
+                </div>
+                <div class="second_row">
+                    <a href="https://dev.to/unclebigbay/how-to-add-horizontal-lines-before-and-after-a-text-in-html-5e6h">
+                        <div class="tile">
+                            <div class="picture-size small">
+                                <div class="picture" style="background-image: url(./pictures/00dc-scotus-abort-qzlt-threeByTwoMediumAt2X.webp);"></div>
+                            </div>
+                            <div class="title">Title</div>
+                            <div class="article_promo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut labore eos nesciunt reprehenderit quae incidunt illum animi maiores, at ipsa cumque quod, eveniet repellendus adipisci, cupiditate dolorum similique doloremque optio.</div>
+                        </div>          
+                    </a>
+                    <a href="#">
+                        <div class="tile" >
+                            <div class="picture-size small">
+                                <div class="picture" style="background-image: url(./pictures/00dc-scotus-abort-qzlt-threeByTwoMediumAt2X.webp);"></div>
+                            </div>
+                            <div class="title">Title</div>
+                            <div class="article_promo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut labore eos nesciunt reprehenderit quae incidunt illum animi maiores, at ipsa cumque quod, eveniet repellendus adipisci, cupiditate dolorum similique doloremque optio.</div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="tile" >
+                            <div class="picture-size small">
+                                <div class="picture" style="background-image: url(./pictures/00dc-scotus-abort-qzlt-threeByTwoMediumAt2X.webp);"></div>
+                            </div>
+                            <div class="title">Title</div>
+                            <div class="article_promo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut labore eos nesciunt reprehenderit quae incidunt illum animi maiores, at ipsa cumque quod, eveniet repellendus adipisci, cupiditate dolorum similique doloremque optio.</div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="tile" >
+                            <div class="picture-size small">
+                                <div class="picture" style="background-image: url(./pictures/00dc-scotus-abort-qzlt-threeByTwoMediumAt2X.webp);"></div>
+                            </div>
+                            <div class="title">Title</div>
+                            <div class="article_promo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut labore eos nesciunt reprehenderit quae incidunt illum animi maiores, at ipsa cumque quod, eveniet repellendus adipisci, cupiditate dolorum similique doloremque optio.</div>
+                        </div>
+                    </a><a href="https://dev.to/unclebigbay/how-to-add-horizontal-lines-before-and-after-a-text-in-html-5e6h">
+                        <div class="tile">
+                            <div class="picture-size small">
+                                <div class="picture" style="background-image: url(./pictures/00dc-scotus-abort-qzlt-threeByTwoMediumAt2X.webp);"></div>
+                            </div>
+                            <div class="title">Title</div>
+                            <div class="article_promo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut labore eos nesciunt reprehenderit quae incidunt illum animi maiores, at ipsa cumque quod, eveniet repellendus adipisci, cupiditate dolorum similique doloremque optio.</div>
+                        </div>          
+                    </a>
+                    <a href="#">
+                        <div class="tile" >
+                            <div class="picture-size small">
+                                <div class="picture" style="background-image: url(./pictures/00dc-scotus-abort-qzlt-threeByTwoMediumAt2X.webp);"></div>
+                            </div>
+                            <div class="title">Title</div>
+                            <div class="article_promo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut labore eos nesciunt reprehenderit quae incidunt illum animi maiores, at ipsa cumque quod, eveniet repellendus adipisci, cupiditate dolorum similique doloremque optio.</div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="tile" >
+                            <div class="picture-size small">
+                                <div class="picture" style="background-image: url(./pictures/00dc-scotus-abort-qzlt-threeByTwoMediumAt2X.webp);"></div>
+                            </div>
+                            <div class="title">Title</div>
+                            <div class="article_promo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut labore eos nesciunt reprehenderit quae incidunt illum animi maiores, at ipsa cumque quod, eveniet repellendus adipisci, cupiditate dolorum similique doloremque optio.</div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="tile" >
+                            <div class="picture-size small">
+                                <div class="picture" style="background-image: url(./pictures/00dc-scotus-abort-qzlt-threeByTwoMediumAt2X.webp);"></div>
+                            </div>
+                            <div class="title">Title</div>
+                            <div class="article_promo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut labore eos nesciunt reprehenderit quae incidunt illum animi maiores, at ipsa cumque quod, eveniet repellendus adipisci, cupiditate dolorum similique doloremque optio.</div>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+          
+        </div>
+    </div>    
+  </main>
+
+  <a href="#1"><div style="margin-left: 100px;" class="article_topic politics">Politics</div></a>
+  <a href="#1"><div class="article_topic world">World</div></a>
+  <a href="#1"><div class="article_topic business">Business</div></a>
+  <a href="#1"><div class="article_topic programing">Programing</div></a>
+  <a href="#1"><div class="article_topic writing">Writing</div></a>
+  <a href="#1"><div class="article_topic engineering">Engineering</div></a>
+  <a href="#1"><div class="article_topic health">Health</div></a>
+  <a href="#1"><div class="article_topic history">History</div></a>
+  <a href="#1"><div class="article_topic sports">Sports</div></a>
+  <a href="#1"><div class="article_topic technology">Technology</div></a>
+
+  </div>
+  <!-- Footer -->
+  <script  src="./headers.js"></script>
+  <script  src="./main.js"></script>
+  <script  src="./cards.js"></script>
+</body>
+</html>

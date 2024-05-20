@@ -1,0 +1,30 @@
+/* article tiles attributes */
+/* --------------------------------------------------------------------------------------- */
+.tile{
+    display: inline-block;
+    /* background-color: #f5f4f1; */
+    height: 330px;
+    width: 345px;
+    margin: 10px;
+} 
+
+.tile::after{
+    content:" ";
+    height: 1px;
+    width: 355px;
+    background: rgb(112, 112, 112);
+    display: block;
+    margin-top: 20px;
+    margin-left: -5px;
+    opacity: 0.4;
+}
+
+.tile_small{
+    height: auto;
+}
+.tile:hover .article_promo
+{
+    cursor: pointer;
+    text-decoration: underline;
+}
+/* --------------------------------------------------------------------------------------- */

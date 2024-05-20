@@ -1,0 +1,60 @@
+/* attributes for the most promissing article */
+.most_promisiong{
+    display: inline-block;
+    margin: 10px;
+    margin-right: 20px;
+    width: 630px;
+    height: 690px;
+}
+
+.most_promisiong::before{
+    content:" ";
+    position: absolute;
+    height: 1px;
+    width: 630px;
+    background: rgb(112, 112, 112);
+    display: block;
+    margin-top: 695px;
+    margin-left: 0px;
+    opacity: 0.4;
+} 
+
+.most_promisiong::after{
+    content:" ";
+    height: 1px;
+    width: 705px;
+    background: rgb(112, 112, 112);
+    display: block;
+    margin-top: -309px;
+    margin-left: 294px;
+    transform: rotate(90deg);
+    opacity: 0.4;
+}
+
+.title-major{
+    margin-top: 10px;
+    font-size: 40px;
+    text-align: left;
+}
+
+.article_promo-major{
+    width: 570px;
+    height: 139px;
+    text-align: left;    
+    font-size: larger;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.read_more{
+    margin-top: 25px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.read_more::after{
+    content: '→';
+    margin: 10px;
+    font-size: 30px;
+    vertical-align: -10%;
+}

@@ -1,0 +1,50 @@
+/*  */
+.politics{
+    background-color: #eee;
+    color: #000;
+}
+
+.programing{
+    background-color:  rgb( 0, 71, 171);
+    color: #fff;
+}
+
+.engineering{
+    background-color: #59078f;
+    color: #fff;
+}
+
+.writing{
+    background-color: #076f8f;
+    color: #fff;
+}
+
+.history{
+    background-color: #683346;
+    color: #fff;
+}
+
+.business{
+    background-color: #850101;
+    color: #fff;
+}
+
+.health{
+    background-color: #078f78;
+    color: #fff;    
+}
+
+.sports{
+    background-color: #07468f;
+    color: #fff;    
+}
+
+.technology{
+    background-color: #013040;
+    color: #fff;    
+}
+
+.world{
+    background-color: #319122;
+    color: #fff;
+}

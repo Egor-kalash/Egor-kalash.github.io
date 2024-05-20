@@ -1,0 +1,14 @@
+.topic_slider{
+    position: fixed;
+    display: inline-block;
+    font-size: 20px;
+}
+
+li{
+    list-style-type: none;
+    margin: 10px;
+}
+
+.topic:hover{
+    text-decoration: underline;
+}

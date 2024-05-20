@@ -1,0 +1,14 @@
+/* Colletion of the CSS files */
+
+@import url(./fonts.css);
+@import url(./header.css);
+@import url(./front_page/front_page_database.css);
+@import url(./article_page.css);
+@import url(./transitions.css);
+@import url(./basics.css);
+@import url(./front_page/cards.css);
+
+* {
+    box-sizing: border-box;
+}
+

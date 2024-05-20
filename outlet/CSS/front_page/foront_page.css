@@ -1,0 +1,68 @@
+/* Only the atributes that affect the entire page */
+.main{
+    display: block;
+    position: relative;
+    top: 127px;
+    height: 10000px;
+    width: 100%;
+}
+
+/* today stuff */
+/* --------------------------------------------------------------------------------------- */
+.taday_new{
+    text-align: center;
+}
+
+.front_title{
+    text-align: left;
+    display: inline-block;
+    width: 1140px;
+    font-style: italic;
+    font-size: 40px;
+    padding-bottom: 20px;
+    border-bottom: #000 3px solid;
+}
+
+.taday-new{
+    width: 1140px;
+    margin: auto;
+    text-align: center;
+}
+
+.container_front{
+    text-align: center;
+}
+
+.container_front_new{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 1030px;
+    height: 720px;
+    box-sizing: border-box;
+}
+
+.little_first_row{
+    display: inline-grid;
+    margin-left: 5px;
+}
+
+.topics{
+    margin-top: 50px;
+}
+
+.articles{
+    display: flex;
+    width: 1140px;
+    margin: auto;
+}
+/* --------------------------------------------------------------------------------------- */
+
+/* make it dynamic */
+
+
+
+.front_title:target-text{
+    margin-left: 20px;
+}
+

@@ -65,3 +65,4 @@ function startTextAnimations() {
 
 // Initial setup
 updateTextGrid();
+
